@@ -12,7 +12,7 @@ Le programme inclut plusieurs fonctionnalités clés :
 - **Algorithmes de résolution** :
   - **Méthode du coin nord-ouest** : Première approche pour trouver une solution initiale au problème de transport.
   - **Méthode de Balas-Hammer** : Optimisation de la solution en minimisant les coûts grâce à la gestion des pénalités.
-  - **Méthode du marche-pied avec potentiel** : Itération pour améliorer la solution jusqu'à optimisation ou identification d'un cycle.
+  - **Méthode du marche-pied avec potentiel** : Itération pour améliorer la solution jusqu'à optimisation ou identification d'un cycle.  (A effectuer)
 
 ## Comment démarrer
 
