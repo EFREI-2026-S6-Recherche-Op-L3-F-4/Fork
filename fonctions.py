@@ -1,5 +1,4 @@
 import os
-from itertools import zip_longest
 import random
 
 
@@ -70,7 +69,6 @@ def afficher_matrice_nordouest(matrice_transfert):
         for element in ligne:
             print(f"{element:4}", end=" ")
         print("]")
-
 
 
 def balas_hammer(matrice_des_couts, matrice_des_prop, capacites,):
