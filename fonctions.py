@@ -1,12 +1,6 @@
 import os
 from itertools import zip_longest
-
-def demander_chemin_dossier():
-    chemin = input("Veuillez entrer le chemin du dossier contenant vos fichiers de matrice : ")
-    while not os.path.exists(chemin):
-        print("Chemin non trouvé")
-        chemin = input("Veuillez entrer le chemin du dossier : ")
-    return chemin
+import random
 
 def lire_matrice_depuis_fichier(chemin_fichier):
     matrice = []
@@ -71,51 +65,62 @@ def afficher_matrice_transfert(matrice_transfert):
             print(f"{element:4}", end=" ")
         print("]")
 
-def balas_hammer(matrice_des_couts, matrice_des_prop, capacites):
-    penalites_lignes = [sorted(ligne)[:2] for ligne in matrice_des_couts[:-1]]
-    penalites_lignes = [penalites[1] - penalites[0] for penalites in penalites_lignes]
 
-    penalites_colonnes = [sorted(colonne)[:2] for colonne in zip_longest(*matrice_des_couts, fillvalue=0)][:-1]
-    penalites_colonnes = [penalites[1] - penalites[0] for penalites in penalites_colonnes]
 
-    max_penalite_ligne = max(penalites_lignes)
-    max_penalite_colonne = max(penalites_colonnes)
+def balas_hammer(matrice_des_couts, matrice_des_prop, capacites,):
+    provisions = [ligne[-1] for ligne in matrice_des_prop[:-1]]
+    commandes = matrice_des_prop[-1]
+    n = len(provisions)
+    m = len(commandes)
+    matrice_transfert = [[0] * m for _ in range(n)]
+    cout_total = 0
 
-    if max_penalite_ligne > max_penalite_colonne:
-        penalites_type = "ligne"
-        indice = penalites_lignes.index(max_penalite_ligne)
-        max_penalite = max_penalite_ligne
-    elif max_penalite_ligne < max_penalite_colonne :
-        penalites_type = "colonne"
-        indice = penalites_colonnes.index(max_penalite_colonne)
-        max_penalite = max_penalite_colonne
-    else:
-        indices_lignes_max = [i for i, p in enumerate(penalites_lignes) if p == max_penalite_ligne]
-        indices_colonnes_max = [i for i, p in enumerate(penalites_colonnes) if p == max_penalite_colonne]
-        if all(p == max_penalite_ligne for p in penalites_lignes):
-            penalites_type = "ligne"
-            indice = penalites_lignes.index(max_penalite_ligne)
-        elif all(p == max_penalite_colonne for p in penalites_colonnes):
-            penalites_type = "colonne"
-            indice = penalites_colonnes.index(max_penalite_colonne)
+    # Calculez les pénalités pour chaque ligne et chaque colonne
+    penalties = []
+    for i in range(n):
+        row = sorted(matrice_des_couts[i])
+        if len(row) > 1:
+            penalties.append((row[1] - row[0], 'row', i))
+    for j in range(m):
+        col = sorted([matrice_des_couts[i][j] for i in range(n)])
+        if len(col) > 1:
+            penalties.append((col[1] - col[0], 'col', j))
+
+    # Triez et trouvez la pénalité maximale
+    penalties.sort(reverse=True, key=lambda x: x[0])
+    max_penalty = penalties[0][0]
+
+    # Identifiez toutes les pénalités maximales
+    max_penalties = [p for p in penalties if p[0] == max_penalty]
+
+    # Afficher les informations sur les pénalités maximales
+    print(f"Pénalité maximale de {max_penalty} trouvée en :")
+    for penalty in max_penalties:
+        if penalty[1] == 'row':
+            print(f" - Ligne {penalty[2]}")
         else:
-            penalites_type = "ligne" if max_penalite_ligne > max_penalite_colonne else "colonne"
-            indice = indices_lignes_max[0] if penalites_type == "ligne" else indices_colonnes_max[0]
-        max_penalite = max_penalite_ligne if penalites_type == "ligne" else max_penalite_colonne
+            print(f" - Colonne {penalty[2]}")
 
-    if penalites_type == "ligne":
-        arete = [indice, matrice_des_prop[-2].index(min(matrice_des_prop[-2]))]
+    # Sélection aléatoire parmi les pénalités maximales si plusieurs
+    if len(max_penalties) > 1:
+        selected_penalty = random.choice(max_penalties)
+        print("Plusieurs emplacements pour la pénalité maximale ont été détectés.")
+        print(f"Choix aléatoire : {'Ligne' if selected_penalty[1] == 'row' else 'Colonne'} {selected_penalty[2]}")
     else:
-        arete = [matrice_des_prop.index(min(matrice_des_prop[:-1], key=lambda x: x[indice])),
-                 indice]
+        selected_penalty = max_penalties[0]
 
-    print(f"Pénalité maximale de valeur {max_penalite} située en {penalites_type} {indice}.")
+    p_type, idx = selected_penalty[1], selected_penalty[2]
 
-    if matrice_des_prop[arete[0]][arete[1]] == max_penalite:
-        print("Il y a plusieurs endroits avec la même valeur de pénalité maximale.")
+    # Déterminez l'arête à remplir
+    if p_type == 'row':
+        min_cost_index = matrice_des_couts[idx].index(min(matrice_des_couts[idx]))
+        quantity_to_fill = min(provisions[idx], commandes[min_cost_index])
+        print(f"Remplir l'arête ({idx}, {min_cost_index}) avec la quantité {quantity_to_fill}.")
+        matrice_transfert[idx][min_cost_index] += quantity_to_fill
+    elif p_type == 'col':
+        min_cost_index = [matrice_des_couts[i][idx] for i in range(n)].index(min([matrice_des_couts[i][idx] for i in range(n)]))
+        quantity_to_fill = min(provisions[min_cost_index], commandes[idx])
+        print(f"Remplir l'arête ({min_cost_index}, {idx}) avec la quantité {quantity_to_fill}.")
+        matrice_transfert[min_cost_index][idx] += quantity_to_fill
 
-    quantite_max = min(capacites[arete[0]], capacites[arete[1]])
-    print(f"Remplir l'arête {arete} avec une quantité maximale de {quantite_max}")
-
-    capacites[arete[0]] -= quantite_max
-    capacites[arete[1]] -= quantite_max
+    return matrice_transfert, cout_total
