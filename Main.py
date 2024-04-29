@@ -26,7 +26,7 @@ def main():
         print("Application de la méthode du coin nord-ouest :")
         matrice_des_prop = lire_matrice_depuis_fichier(chemin_fichier)
         matrice_initiale = coin_nord_ouest(matrice_des_prop[1:])
-        afficher_matrice_transfert(matrice_initiale)
+        afficher_matrice_nordouest(matrice_initiale)
 
         print("\n-------------------")
         print("Application de la méthode de Balas-Hammer :")

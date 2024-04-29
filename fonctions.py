@@ -2,6 +2,16 @@ import os
 from itertools import zip_longest
 import random
 
+
+def choisir_fichier(dossier):
+    fichiers = os.listdir(dossier)
+    print("Liste des problèmes de transport dans le dossier :")
+    for fichier in fichiers:
+        print(fichier)
+    nom_fichier = input("Entrez le nom du fichier que vous voulez afficher : ")
+    return nom_fichier
+
+
 def lire_matrice_depuis_fichier(chemin_fichier):
     matrice = []
     with open(chemin_fichier, 'r') as f:
@@ -10,12 +20,14 @@ def lire_matrice_depuis_fichier(chemin_fichier):
             matrice.append(valeurs_ligne)
     return matrice
 
+
 def afficher_matrice_cout(matrice_des_couts):
     for ligne in matrice_des_couts[:-1]:
         print("[", end="")
         for element in ligne[:-1]:
             print(f"{element:4}", end="  ")
         print("]")
+
 
 def afficher_matrice_proptrans(matrice_des_prop):
     print("Provisions : [", end="")
@@ -28,13 +40,6 @@ def afficher_matrice_proptrans(matrice_des_prop):
         print(f"{element:4}", end=" ")
     print("]")
 
-def choisir_fichier(dossier):
-    fichiers = os.listdir(dossier)
-    print("Liste des problèmes de transport dans le dossier :")
-    for fichier in fichiers:
-        print(fichier)
-    nom_fichier = input("Entrez le nom du fichier que vous voulez afficher : ")
-    return nom_fichier
 
 def coin_nord_ouest(matrice_des_prop):
     provisions = [ligne[-1] for ligne in matrice_des_prop[:-1]].copy()
@@ -57,7 +62,8 @@ def coin_nord_ouest(matrice_des_prop):
 
     return matrice_transfert
 
-def afficher_matrice_transfert(matrice_transfert):
+
+def afficher_matrice_nordouest(matrice_transfert):
     print("Résultat de la méthode du coin nord-ouest :")
     for ligne in matrice_transfert:
         print("[", end="")
