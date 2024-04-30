@@ -62,8 +62,7 @@ def coin_nord_ouest(matrice_des_prop):
     return matrice_transfert
 
 
-def afficher_matrice_nordouest(matrice_transfert):
-    print("Résultat de la méthode du coin nord-ouest :")
+def afficher_matrice_transfert(matrice_transfert):
     for ligne in matrice_transfert:
         print("[", end="")
         for element in ligne:
@@ -72,10 +71,17 @@ def afficher_matrice_nordouest(matrice_transfert):
 
 
 def balas_hammer(matrice_des_couts, matrice_des_prop, capacites,):
+
     provisions = [ligne[-1] for ligne in matrice_des_prop[:-1]]
     commandes = matrice_des_prop[-1]
     n = len(provisions)
     m = len(commandes)
+
+    if sum(provisions) != sum(commandes):
+        print("Problème non équilibré, nous ne pouvons pas appliquer balas hammer")
+        return(None, None)
+    print("Problème équilibré, nous pouvons appliquer balas hammer")
+
     matrice_transfert = [[0] * m for _ in range(n)]
     cout_total = 0
 
@@ -121,10 +127,17 @@ def balas_hammer(matrice_des_couts, matrice_des_prop, capacites,):
         quantity_to_fill = min(provisions[idx], commandes[min_cost_index])
         print(f"Remplir l'arête ({idx}, {min_cost_index}) avec la quantité {quantity_to_fill}.")
         matrice_transfert[idx][min_cost_index] += quantity_to_fill
+        provisions[idx] -= quantity_to_fill
+        commandes[min_cost_index] -= quantity_to_fill
     elif p_type == 'col':
-        min_cost_index = [matrice_des_couts[i][idx] for i in range(n)].index(min([matrice_des_couts[i][idx] for i in range(n)]))
+        min_cost_index = [matrice_des_couts[i][idx] for i in range(n)].index(
+            min([matrice_des_couts[i][idx] for i in range(n)]))
         quantity_to_fill = min(provisions[min_cost_index], commandes[idx])
         print(f"Remplir l'arête ({min_cost_index}, {idx}) avec la quantité {quantity_to_fill}.")
         matrice_transfert[min_cost_index][idx] += quantity_to_fill
+        provisions[min_cost_index] -= quantity_to_fill
+        commandes[idx] -= quantity_to_fill
 
+    print("Provisions", provisions)
+    print("Commandes", commandes)
     return matrice_transfert, cout_total
