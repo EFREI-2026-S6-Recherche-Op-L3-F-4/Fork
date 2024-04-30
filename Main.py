@@ -31,7 +31,7 @@ def main():
 
         print("\n-------------------")
         print("Application de la méthode de Balas-Hammer :")
-        matrice_transfert, cout_total = balas_hammer(matrice_des_couts[1:], matrice_des_prop[1:])
+        matrice_transfert= balas_hammer(matrice_des_couts[1:], matrice_des_prop[1:])
         print("Matrice de transfert obtenue :")
         afficher_matrice_transfert(matrice_transfert)
         print("\n-------------------")

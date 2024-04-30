@@ -83,10 +83,6 @@ def balas_hammer(matrice_des_couts, matrice_des_prop):
     print("Problème équilibré, nous pouvons appliquer balas hammer")
 
     matrice_transfert = [[0] * m for _ in range(n)]
-    cout_total = 0
-
-    # Créer une matrice pour suivre les arêtes remplies
-    filled_edges = [[False] * m for _ in range(n)]
 
     # Calculez les pénalités pour chaque ligne et chaque colonne
     while sum(provisions) > 0 and sum(commandes) > 0:
@@ -157,4 +153,4 @@ def balas_hammer(matrice_des_couts, matrice_des_prop):
             provisions[min_cost_index] -= quantity_to_fill
             commandes[idx] -= quantity_to_fill
 
-    return matrice_transfert, cout_total
+    return matrice_transfert
