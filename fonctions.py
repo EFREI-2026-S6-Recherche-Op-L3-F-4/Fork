@@ -282,4 +282,5 @@ def verifier_connexite(matrice_transfert):
         print("La matrice de transfert est non connexe. Voici les sous-graphes connexes composant la proposition:")
         for i, comp in enumerate(composantes):
             print(comp, end=',' if i < len(composantes) - 1 else '\n')
-            return composantes
+
+        return composantes
