@@ -1,4 +1,3 @@
-import os
 from fonctions import *
 
 def main():
@@ -28,12 +27,28 @@ def main():
         matrice_initiale = coin_nord_ouest(matrice_des_prop[1:])
         print("Résultat de la méthode du coin nord-ouest :")
         afficher_matrice_transfert(matrice_initiale)
+        cout_total_nord_ouest = calculer_cout_total(matrice_des_couts[1:], matrice_initiale)
+        print("Coût total pour la méthode du coin nord-ouest :", cout_total_nord_ouest)
+
 
         print("\n-------------------")
         print("Application de la méthode de Balas-Hammer :")
         matrice_transfert= balas_hammer(matrice_des_couts[1:], matrice_des_prop[1:])
         print("Matrice de transfert obtenue :")
         afficher_matrice_transfert(matrice_transfert)
+        if matrice_transfert is not None:
+            cout_total_balas_hamer = calculer_cout_total(matrice_des_couts[1:], matrice_transfert)
+            print("Coût total pour la méthode de Balas-Hamer :", cout_total_balas_hamer)
+
+        print("\n-------------------")
+        print("Vérification de la présence de cycles dans la matrice de transfert :")
+        if detecter_cycle(matrice_transfert):
+            maximiser_transport(matrice_transfert, matrice_des_couts)
+
+        print("\n-------------------")
+        print("La matrice de transfert est-elle connexe :")
+        liste = verifier_connexite(matrice_transfert)
+
         print("\n-------------------")
         print("Fin du programme.")
 
