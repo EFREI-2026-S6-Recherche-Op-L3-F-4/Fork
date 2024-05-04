@@ -2,6 +2,7 @@ from fonctions import *
 
 def main():
     chemin_dossier = os.path.join(os.path.dirname(__file__), 'Fichiers_tests')
+
     while True:
         nom_fichier = choisir_fichier(chemin_dossier)
 
@@ -51,6 +52,7 @@ def main():
 
         print("\n-------------------")
         print("Fin du programme.")
+
 
 if __name__ == "__main__":
     main()
