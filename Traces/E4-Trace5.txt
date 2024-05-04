@@ -1,0 +1,71 @@
+Entrez le nom du fichier que vous voulez afficher : 5
+
+Contenu du fichier 5 :
+ 3  3
+ 5  7  8 25
+ 6  8  5 25
+ 6  7  7 25
+35 20 20
+
+-------------------
+Calcul de la matrice des coûts :
+[   5     7     8  ]
+[   6     8     5  ]
+[   6     7     7  ]
+
+-------------------
+Calcul de la matrice de proposition de transport (Pi et Cj) :
+Provisions : [  25   25   25 ]
+Commandes : [  35   20   20 ]
+
+-------------------
+Application de la méthode du coin nord-ouest :
+Résultat de la méthode du coin nord-ouest :
++----+----+----+----+
+|    | C1 | C2 | C3 |
++----+----+----+----+
+| S1 | 25 | 0  | 0  |
+| S2 | 10 | 15 | 0  |
+| S3 | 0  | 5  | 20 |
++----+----+----+----+
+Coût total pour la méthode du coin nord-ouest : 480
+
+-------------------
+Application de la méthode de Balas-Hammer :
+Problème équilibré, nous pouvons appliquer balas hammer
+Pénalité maximale de 2 trouvée en :
+ - Ligne 0
+ - Colonne 2
+Plusieurs emplacements pour la pénalité maximale ont été détectés.
+Choix aléatoire : Ligne 0
+Remplir l'arête (0, 0) avec la quantité 25.
+Pénalité maximale de 2 trouvée en :
+ - Colonne 2
+Remplir l'arête (1, 2) avec la quantité 20.
+Pénalité maximale de 2 trouvée en :
+ - Ligne 1
+Remplir l'arête (1, 0) avec la quantité 5.
+Pénalité maximale de 1 trouvée en :
+ - Ligne 2
+Remplir l'arête (2, 0) avec la quantité 5.
+Forçage de remplissage: (2, 1) avec la quantité restante.
+Matrice de transfert obtenue :
++----+----+----+----+
+|    | C1 | C2 | C3 |
++----+----+----+----+
+| S1 | 25 | 0  | 0  |
+| S2 | 5  | 0  | 20 |
+| S3 | 5  | 20 | 0  |
++----+----+----+----+
+Coût total pour la méthode de Balas-Hamer : 425
+
+-------------------
+Vérification de la présence de cycles dans la matrice de transfert :
+Aucun cycle détecté dans la matrice de transfert.
+
+-------------------
+La matrice de transfert est-elle connexe :
+La matrice de transfert est connexe.
+
+-------------------
+Fin du programme.

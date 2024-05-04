@@ -1,0 +1,75 @@
+Entrez le nom du fichier que vous voulez afficher : 10
+
+Contenu du fichier 10 :
+  3   7
+300  20  15  16  17  18  20  500
+  1  50  24  30  22  27  19  500
+ 50  40  30   3  25  26   3 2500
+500 500 500 500 500 500 500
+
+-------------------
+Calcul de la matrice des coûts :
+[ 300    20    15    16    17    18    20  ]
+[   1    50    24    30    22    27    19  ]
+[  50    40    30     3    25    26     3  ]
+
+-------------------
+Calcul de la matrice de proposition de transport (Pi et Cj) :
+Provisions : [ 500  500 2500 ]
+Commandes : [ 500  500  500  500  500  500  500 ]
+
+-------------------
+Application de la méthode du coin nord-ouest :
+Résultat de la méthode du coin nord-ouest :
++----+-----+-----+-----+-----+-----+-----+-----+
+|    |  C1 |  C2 |  C3 |  C4 |  C5 |  C6 |  C7 |
++----+-----+-----+-----+-----+-----+-----+-----+
+| S1 | 500 |  0  |  0  |  0  |  0  |  0  |  0  |
+| S2 |  0  | 500 |  0  |  0  |  0  |  0  |  0  |
+| S3 |  0  |  0  | 500 | 500 | 500 | 500 | 500 |
++----+-----+-----+-----+-----+-----+-----+-----+
+Coût total pour la méthode du coin nord-ouest : 218500
+
+-------------------
+Application de la méthode de Balas-Hammer :
+Problème équilibré, nous pouvons appliquer balas hammer
+Pénalité maximale de 49 trouvée en :
+ - Colonne 0
+Remplir l'arête (1, 0) avec la quantité 500.
+Pénalité maximale de 20 trouvée en :
+ - Colonne 1
+Remplir l'arête (0, 1) avec la quantité 500.
+Pénalité maximale de 0 trouvée en :
+ - Ligne 2
+Remplir l'arête (2, 3) avec la quantité 500.
+Pénalité maximale de 22 trouvée en :
+ - Ligne 2
+Remplir l'arête (2, 6) avec la quantité 500.
+Pénalité maximale de 1 trouvée en :
+ - Ligne 2
+Remplir l'arête (2, 4) avec la quantité 500.
+Pénalité maximale de 4 trouvée en :
+ - Ligne 2
+Remplir l'arête (2, 5) avec la quantité 500.
+Forçage de remplissage: (2, 2) avec la quantité restante.
+Matrice de transfert obtenue :
++----+-----+-----+-----+-----+-----+-----+-----+
+|    |  C1 |  C2 |  C3 |  C4 |  C5 |  C6 |  C7 |
++----+-----+-----+-----+-----+-----+-----+-----+
+| S1 |  0  | 500 |  0  |  0  |  0  |  0  |  0  |
+| S2 | 500 |  0  |  0  |  0  |  0  |  0  |  0  |
+| S3 |  0  |  0  | 500 | 500 | 500 | 500 | 500 |
++----+-----+-----+-----+-----+-----+-----+-----+
+Coût total pour la méthode de Balas-Hamer : 54000
+
+-------------------
+Vérification de la présence de cycles dans la matrice de transfert :
+Aucun cycle détecté dans la matrice de transfert.
+
+-------------------
+La matrice de transfert est-elle connexe :
+La matrice de transfert est non connexe. Voici les sous-graphes connexes composant la proposition:
+['S1', 'C2'],['S2', 'C1'],['S3', 'C3', 'C4', 'C5', 'C6', 'C7']
+
+-------------------
+Fin du programme.

@@ -1,0 +1,390 @@
+Entrez le nom du fichier que vous voulez afficher : 12
+
+Contenu du fichier 12 :
+ 10  16
+186 185 184 183 182 181 180 179 178 177 176 175 174 173 172 171 160
+166 165 164 163 162 161 160 159 158 157 156 155 154 153 152 151 160
+156 155 154 153 152 151 150 149 148 147 146 145 144 143 142 141 160
+136 135 134 133 132 131 130 129 128 127 126 125 124 123 122 121 160
+116 115 114 113 112 111 110 109 108 107 106 105 104 103 102 101 160
+ 96  95  94  93  92  91  90  89  88  87  86  85  84  83  82  81 160
+ 76  75  74  73  72  71  70  69  68  67  66  65  64  63  62  61 160
+ 56  55  54  53  52  51  50  49  48  47  46  45  44  43  42  41 160
+ 36  35  34  33  32  31  30  29  28  27  26  25  24  23  22  21 160
+ 16  15  14  13  12  11  10   9   8   7   6   5   4   3   2   1 160
+100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100
+
+-------------------
+Calcul de la matrice des coûts :
+[ 186   185   184   183   182   181   180   179   178   177   176   175   174   173   172   171  ]
+[ 166   165   164   163   162   161   160   159   158   157   156   155   154   153   152   151  ]
+[ 156   155   154   153   152   151   150   149   148   147   146   145   144   143   142   141  ]
+[ 136   135   134   133   132   131   130   129   128   127   126   125   124   123   122   121  ]
+[ 116   115   114   113   112   111   110   109   108   107   106   105   104   103   102   101  ]
+[  96    95    94    93    92    91    90    89    88    87    86    85    84    83    82    81  ]
+[  76    75    74    73    72    71    70    69    68    67    66    65    64    63    62    61  ]
+[  56    55    54    53    52    51    50    49    48    47    46    45    44    43    42    41  ]
+[  36    35    34    33    32    31    30    29    28    27    26    25    24    23    22    21  ]
+[  16    15    14    13    12    11    10     9     8     7     6     5     4     3     2     1  ]
+
+-------------------
+Calcul de la matrice de proposition de transport (Pi et Cj) :
+Provisions : [ 160  160  160  160  160  160  160  160  160  160 ]
+Commandes : [ 100  100  100  100  100  100  100  100  100  100  100  100  100  100  100  100 ]
+
+-------------------
+Application de la méthode du coin nord-ouest :
+Résultat de la méthode du coin nord-ouest :
++-----+-----+----+-----+----+----+-----+----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
+|     |  C1 | C2 |  C3 | C4 | C5 |  C6 | C7 |  C8 |  C9 | C10 | C11 | C12 | C13 | C14 | C15 | C16 |
++-----+-----+----+-----+----+----+-----+----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
+|  S1 | 100 | 60 |  0  | 0  | 0  |  0  | 0  |  0  |  0  |  0  |  0  |  0  |  0  |  0  |  0  |  0  |
+|  S2 |  0  | 40 | 100 | 20 | 0  |  0  | 0  |  0  |  0  |  0  |  0  |  0  |  0  |  0  |  0  |  0  |
+|  S3 |  0  | 0  |  0  | 80 | 80 |  0  | 0  |  0  |  0  |  0  |  0  |  0  |  0  |  0  |  0  |  0  |
+|  S4 |  0  | 0  |  0  | 0  | 20 | 100 | 40 |  0  |  0  |  0  |  0  |  0  |  0  |  0  |  0  |  0  |
+|  S5 |  0  | 0  |  0  | 0  | 0  |  0  | 60 | 100 |  0  |  0  |  0  |  0  |  0  |  0  |  0  |  0  |
+|  S6 |  0  | 0  |  0  | 0  | 0  |  0  | 0  |  0  | 100 |  60 |  0  |  0  |  0  |  0  |  0  |  0  |
+|  S7 |  0  | 0  |  0  | 0  | 0  |  0  | 0  |  0  |  0  |  40 | 100 |  20 |  0  |  0  |  0  |  0  |
+|  S8 |  0  | 0  |  0  | 0  | 0  |  0  | 0  |  0  |  0  |  0  |  0  |  80 |  80 |  0  |  0  |  0  |
+|  S9 |  0  | 0  |  0  | 0  | 0  |  0  | 0  |  0  |  0  |  0  |  0  |  0  |  20 | 100 |  40 |  0  |
+| S10 |  0  | 0  |  0  | 0  | 0  |  0  | 0  |  0  |  0  |  0  |  0  |  0  |  0  |  0  |  60 | 100 |
++-----+-----+----+-----+----+----+-----+----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
+Coût total pour la méthode du coin nord-ouest : 154400
+
+-------------------
+Application de la méthode de Balas-Hammer :
+Problème équilibré, nous pouvons appliquer balas hammer
+Pénalité maximale de 20 trouvée en :
+ - Colonne 0
+ - Colonne 1
+ - Colonne 2
+ - Colonne 3
+ - Colonne 4
+ - Colonne 5
+ - Colonne 6
+ - Colonne 7
+ - Colonne 8
+ - Colonne 9
+ - Colonne 10
+ - Colonne 11
+ - Colonne 12
+ - Colonne 13
+ - Colonne 14
+ - Colonne 15
+Plusieurs emplacements pour la pénalité maximale ont été détectés.
+Choix aléatoire : Colonne 1
+Remplir l'arête (9, 1) avec la quantité 100.
+Pénalité maximale de 20 trouvée en :
+ - Colonne 0
+ - Colonne 2
+ - Colonne 3
+ - Colonne 4
+ - Colonne 5
+ - Colonne 6
+ - Colonne 7
+ - Colonne 8
+ - Colonne 9
+ - Colonne 10
+ - Colonne 11
+ - Colonne 12
+ - Colonne 13
+ - Colonne 14
+ - Colonne 15
+Plusieurs emplacements pour la pénalité maximale ont été détectés.
+Choix aléatoire : Colonne 14
+Remplir l'arête (9, 14) avec la quantité 60.
+Pénalité maximale de 20 trouvée en :
+ - Colonne 0
+ - Colonne 2
+ - Colonne 3
+ - Colonne 4
+ - Colonne 5
+ - Colonne 6
+ - Colonne 7
+ - Colonne 8
+ - Colonne 9
+ - Colonne 10
+ - Colonne 11
+ - Colonne 12
+ - Colonne 13
+ - Colonne 14
+ - Colonne 15
+Plusieurs emplacements pour la pénalité maximale ont été détectés.
+Choix aléatoire : Colonne 10
+Remplir l'arête (8, 10) avec la quantité 100.
+Pénalité maximale de 20 trouvée en :
+ - Colonne 0
+ - Colonne 2
+ - Colonne 3
+ - Colonne 4
+ - Colonne 5
+ - Colonne 6
+ - Colonne 7
+ - Colonne 8
+ - Colonne 9
+ - Colonne 11
+ - Colonne 12
+ - Colonne 13
+ - Colonne 14
+ - Colonne 15
+Plusieurs emplacements pour la pénalité maximale ont été détectés.
+Choix aléatoire : Colonne 13
+Remplir l'arête (8, 13) avec la quantité 60.
+Pénalité maximale de 20 trouvée en :
+ - Colonne 0
+ - Colonne 2
+ - Colonne 3
+ - Colonne 4
+ - Colonne 5
+ - Colonne 6
+ - Colonne 7
+ - Colonne 8
+ - Colonne 9
+ - Colonne 11
+ - Colonne 12
+ - Colonne 13
+ - Colonne 14
+ - Colonne 15
+Plusieurs emplacements pour la pénalité maximale ont été détectés.
+Choix aléatoire : Colonne 8
+Remplir l'arête (7, 8) avec la quantité 100.
+Pénalité maximale de 20 trouvée en :
+ - Colonne 0
+ - Colonne 2
+ - Colonne 3
+ - Colonne 4
+ - Colonne 5
+ - Colonne 6
+ - Colonne 7
+ - Colonne 9
+ - Colonne 11
+ - Colonne 12
+ - Colonne 13
+ - Colonne 14
+ - Colonne 15
+Plusieurs emplacements pour la pénalité maximale ont été détectés.
+Choix aléatoire : Colonne 3
+Remplir l'arête (7, 3) avec la quantité 60.
+Pénalité maximale de 20 trouvée en :
+ - Colonne 0
+ - Colonne 2
+ - Colonne 3
+ - Colonne 4
+ - Colonne 5
+ - Colonne 6
+ - Colonne 7
+ - Colonne 9
+ - Colonne 11
+ - Colonne 12
+ - Colonne 13
+ - Colonne 14
+ - Colonne 15
+Plusieurs emplacements pour la pénalité maximale ont été détectés.
+Choix aléatoire : Colonne 13
+Remplir l'arête (6, 13) avec la quantité 40.
+Pénalité maximale de 20 trouvée en :
+ - Colonne 0
+ - Colonne 2
+ - Colonne 3
+ - Colonne 4
+ - Colonne 5
+ - Colonne 6
+ - Colonne 7
+ - Colonne 9
+ - Colonne 11
+ - Colonne 12
+ - Colonne 14
+ - Colonne 15
+Plusieurs emplacements pour la pénalité maximale ont été détectés.
+Choix aléatoire : Colonne 2
+Remplir l'arête (6, 2) avec la quantité 100.
+Pénalité maximale de 20 trouvée en :
+ - Colonne 0
+ - Colonne 3
+ - Colonne 4
+ - Colonne 5
+ - Colonne 6
+ - Colonne 7
+ - Colonne 9
+ - Colonne 11
+ - Colonne 12
+ - Colonne 14
+ - Colonne 15
+Plusieurs emplacements pour la pénalité maximale ont été détectés.
+Choix aléatoire : Colonne 0
+Remplir l'arête (6, 0) avec la quantité 20.
+Pénalité maximale de 20 trouvée en :
+ - Colonne 0
+ - Colonne 3
+ - Colonne 4
+ - Colonne 5
+ - Colonne 6
+ - Colonne 7
+ - Colonne 9
+ - Colonne 11
+ - Colonne 12
+ - Colonne 14
+ - Colonne 15
+Plusieurs emplacements pour la pénalité maximale ont été détectés.
+Choix aléatoire : Colonne 4
+Remplir l'arête (5, 4) avec la quantité 100.
+Pénalité maximale de 20 trouvée en :
+ - Colonne 0
+ - Colonne 3
+ - Colonne 5
+ - Colonne 6
+ - Colonne 7
+ - Colonne 9
+ - Colonne 11
+ - Colonne 12
+ - Colonne 14
+ - Colonne 15
+Plusieurs emplacements pour la pénalité maximale ont été détectés.
+Choix aléatoire : Colonne 0
+Remplir l'arête (5, 0) avec la quantité 60.
+Pénalité maximale de 20 trouvée en :
+ - Colonne 0
+ - Colonne 3
+ - Colonne 5
+ - Colonne 6
+ - Colonne 7
+ - Colonne 9
+ - Colonne 11
+ - Colonne 12
+ - Colonne 14
+ - Colonne 15
+Plusieurs emplacements pour la pénalité maximale ont été détectés.
+Choix aléatoire : Colonne 3
+Remplir l'arête (4, 3) avec la quantité 40.
+Pénalité maximale de 20 trouvée en :
+ - Colonne 0
+ - Colonne 5
+ - Colonne 6
+ - Colonne 7
+ - Colonne 9
+ - Colonne 11
+ - Colonne 12
+ - Colonne 14
+ - Colonne 15
+Plusieurs emplacements pour la pénalité maximale ont été détectés.
+Choix aléatoire : Colonne 12
+Remplir l'arête (4, 12) avec la quantité 100.
+Pénalité maximale de 20 trouvée en :
+ - Colonne 0
+ - Colonne 5
+ - Colonne 6
+ - Colonne 7
+ - Colonne 9
+ - Colonne 11
+ - Colonne 14
+ - Colonne 15
+Plusieurs emplacements pour la pénalité maximale ont été détectés.
+Choix aléatoire : Colonne 9
+Remplir l'arête (4, 9) avec la quantité 20.
+Pénalité maximale de 20 trouvée en :
+ - Colonne 0
+ - Colonne 5
+ - Colonne 6
+ - Colonne 7
+ - Colonne 9
+ - Colonne 11
+ - Colonne 14
+ - Colonne 15
+Plusieurs emplacements pour la pénalité maximale ont été détectés.
+Choix aléatoire : Colonne 14
+Remplir l'arête (3, 14) avec la quantité 40.
+Pénalité maximale de 20 trouvée en :
+ - Colonne 0
+ - Colonne 5
+ - Colonne 6
+ - Colonne 7
+ - Colonne 9
+ - Colonne 11
+ - Colonne 15
+Plusieurs emplacements pour la pénalité maximale ont été détectés.
+Choix aléatoire : Colonne 15
+Remplir l'arête (3, 15) avec la quantité 100.
+Pénalité maximale de 20 trouvée en :
+ - Colonne 0
+ - Colonne 5
+ - Colonne 6
+ - Colonne 7
+ - Colonne 9
+ - Colonne 11
+Plusieurs emplacements pour la pénalité maximale ont été détectés.
+Choix aléatoire : Colonne 7
+Remplir l'arête (3, 7) avec la quantité 20.
+Pénalité maximale de 10 trouvée en :
+ - Colonne 0
+ - Colonne 5
+ - Colonne 6
+ - Colonne 7
+ - Colonne 9
+ - Colonne 11
+Plusieurs emplacements pour la pénalité maximale ont été détectés.
+Choix aléatoire : Colonne 11
+Remplir l'arête (2, 11) avec la quantité 100.
+Pénalité maximale de 10 trouvée en :
+ - Colonne 0
+ - Colonne 5
+ - Colonne 6
+ - Colonne 7
+ - Colonne 9
+Plusieurs emplacements pour la pénalité maximale ont été détectés.
+Choix aléatoire : Colonne 0
+Remplir l'arête (2, 0) avec la quantité 20.
+Pénalité maximale de 10 trouvée en :
+ - Colonne 5
+ - Colonne 6
+ - Colonne 7
+ - Colonne 9
+Plusieurs emplacements pour la pénalité maximale ont été détectés.
+Choix aléatoire : Colonne 6
+Remplir l'arête (2, 6) avec la quantité 40.
+Pénalité maximale de 20 trouvée en :
+ - Colonne 5
+ - Colonne 6
+ - Colonne 7
+ - Colonne 9
+Plusieurs emplacements pour la pénalité maximale ont été détectés.
+Choix aléatoire : Colonne 5
+Remplir l'arête (1, 5) avec la quantité 100.
+Pénalité maximale de 20 trouvée en :
+ - Colonne 6
+ - Colonne 7
+ - Colonne 9
+Plusieurs emplacements pour la pénalité maximale ont été détectés.
+Choix aléatoire : Colonne 6
+Remplir l'arête (1, 6) avec la quantité 60.
+Pénalité maximale de 2 trouvée en :
+ - Ligne 0
+Remplir l'arête (0, 9) avec la quantité 80.
+Forçage de remplissage: (0, 7) avec la quantité restante.
+Matrice de transfert obtenue :
++-----+----+-----+-----+----+-----+-----+----+----+-----+-----+-----+-----+-----+-----+-----+-----+
+|     | C1 |  C2 |  C3 | C4 |  C5 |  C6 | C7 | C8 |  C9 | C10 | C11 | C12 | C13 | C14 | C15 | C16 |
++-----+----+-----+-----+----+-----+-----+----+----+-----+-----+-----+-----+-----+-----+-----+-----+
+|  S1 | 0  |  0  |  0  | 0  |  0  |  0  | 0  | 80 |  0  |  80 |  0  |  0  |  0  |  0  |  0  |  0  |
+|  S2 | 0  |  0  |  0  | 0  |  0  | 100 | 60 | 0  |  0  |  0  |  0  |  0  |  0  |  0  |  0  |  0  |
+|  S3 | 20 |  0  |  0  | 0  |  0  |  0  | 40 | 0  |  0  |  0  |  0  | 100 |  0  |  0  |  0  |  0  |
+|  S4 | 0  |  0  |  0  | 0  |  0  |  0  | 0  | 20 |  0  |  0  |  0  |  0  |  0  |  0  |  40 | 100 |
+|  S5 | 0  |  0  |  0  | 40 |  0  |  0  | 0  | 0  |  0  |  20 |  0  |  0  | 100 |  0  |  0  |  0  |
+|  S6 | 60 |  0  |  0  | 0  | 100 |  0  | 0  | 0  |  0  |  0  |  0  |  0  |  0  |  0  |  0  |  0  |
+|  S7 | 20 |  0  | 100 | 0  |  0  |  0  | 0  | 0  |  0  |  0  |  0  |  0  |  0  |  40 |  0  |  0  |
+|  S8 | 0  |  0  |  0  | 60 |  0  |  0  | 0  | 0  | 100 |  0  |  0  |  0  |  0  |  0  |  0  |  0  |
+|  S9 | 0  |  0  |  0  | 0  |  0  |  0  | 0  | 0  |  0  |  0  | 100 |  0  |  0  |  60 |  0  |  0  |
+| S10 | 0  | 100 |  0  | 0  |  0  |  0  | 0  | 0  |  0  |  0  |  0  |  0  |  0  |  0  |  60 |  0  |
++-----+----+-----+-----+----+-----+-----+----+----+-----+-----+-----+-----+-----+-----+-----+-----+
+Coût total pour la méthode de Balas-Hamer : 154400
+
+-------------------
+Vérification de la présence de cycles dans la matrice de transfert :
+Aucun cycle détecté dans la matrice de transfert.
+
+-------------------
+La matrice de transfert est-elle connexe :
+La matrice de transfert est non connexe. Voici les sous-graphes connexes composant la proposition:
+['S1', 'C8', 'C10', 'S4', 'S5', 'C15', 'C16', 'C4', 'C13', 'S10', 'S8', 'C2', 'C9'],['S2', 'C6', 'C7', 'S3', 'C1', 'C12', 'S6', 'S7', 'C5', 'C3', 'C14', 'S9', 'C11']
+
+-------------------
+Fin du programme.

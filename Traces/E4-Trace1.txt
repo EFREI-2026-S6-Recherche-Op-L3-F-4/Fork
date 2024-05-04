@@ -1,0 +1,56 @@
+Entrez le nom du fichier que vous voulez afficher : 1
+
+Contenu du fichier 1 :
+  2   2
+ 30  20  100
+ 10  50  100
+100 100
+
+-------------------
+Calcul de la matrice des coûts :
+[  30    20  ]
+[  10    50  ]
+
+-------------------
+Calcul de la matrice de proposition de transport (Pi et Cj) :
+Provisions : [ 100  100 ]
+Commandes : [ 100  100 ]
+
+-------------------
+Application de la méthode du coin nord-ouest :
+Résultat de la méthode du coin nord-ouest :
++----+-----+-----+
+|    |  C1 |  C2 |
++----+-----+-----+
+| S1 | 100 |  0  |
+| S2 |  0  | 100 |
++----+-----+-----+
+Coût total pour la méthode du coin nord-ouest : 8000
+
+-------------------
+Application de la méthode de Balas-Hammer :
+Problème équilibré, nous pouvons appliquer balas hammer
+Pénalité maximale de 40 trouvée en :
+ - Ligne 1
+Remplir l'arête (1, 0) avec la quantité 100.
+Forçage de remplissage: (0, 1) avec la quantité restante.
+Matrice de transfert obtenue :
++----+-----+-----+
+|    |  C1 |  C2 |
++----+-----+-----+
+| S1 |  0  | 100 |
+| S2 | 100 |  0  |
++----+-----+-----+
+Coût total pour la méthode de Balas-Hamer : 3000
+
+-------------------
+Vérification de la présence de cycles dans la matrice de transfert :
+Aucun cycle détecté dans la matrice de transfert.
+
+-------------------
+La matrice de transfert est-elle connexe :
+La matrice de transfert est non connexe. Voici les sous-graphes connexes composant la proposition:
+['S1', 'C2'],['S2', 'C1']
+
+-------------------
+Fin du programme.

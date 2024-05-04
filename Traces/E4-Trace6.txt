@@ -1,0 +1,74 @@
+Entrez le nom du fichier que vous voulez afficher : 6
+
+Contenu du fichier 6 :
+ 3  4
+11 12 10 10 60
+17 16 15 18 30
+19 21 20 22 90
+50 75 30 25
+
+-------------------
+Calcul de la matrice des coûts :
+[  11    12    10    10  ]
+[  17    16    15    18  ]
+[  19    21    20    22  ]
+
+-------------------
+Calcul de la matrice de proposition de transport (Pi et Cj) :
+Provisions : [  60   30   90 ]
+Commandes : [  50   75   30   25 ]
+
+-------------------
+Application de la méthode du coin nord-ouest :
+Résultat de la méthode du coin nord-ouest :
++----+----+----+----+----+
+|    | C1 | C2 | C3 | C4 |
++----+----+----+----+----+
+| S1 | 50 | 10 | 0  | 0  |
+| S2 | 0  | 30 | 0  | 0  |
+| S3 | 0  | 35 | 30 | 25 |
++----+----+----+----+----+
+Coût total pour la méthode du coin nord-ouest : 3035
+
+-------------------
+Application de la méthode de Balas-Hammer :
+Problème équilibré, nous pouvons appliquer balas hammer
+Pénalité maximale de 8 trouvée en :
+ - Colonne 3
+Remplir l'arête (0, 3) avec la quantité 25.
+Pénalité maximale de 6 trouvée en :
+ - Colonne 0
+Remplir l'arête (0, 0) avec la quantité 35.
+Pénalité maximale de 5 trouvée en :
+ - Colonne 1
+ - Colonne 2
+Plusieurs emplacements pour la pénalité maximale ont été détectés.
+Choix aléatoire : Colonne 1
+Remplir l'arête (1, 1) avec la quantité 30.
+Pénalité maximale de 1 trouvée en :
+ - Ligne 2
+Remplir l'arête (2, 0) avec la quantité 15.
+Pénalité maximale de 1 trouvée en :
+ - Ligne 2
+Remplir l'arête (2, 2) avec la quantité 30.
+Forçage de remplissage: (2, 1) avec la quantité restante.
+Matrice de transfert obtenue :
++----+----+----+----+----+
+|    | C1 | C2 | C3 | C4 |
++----+----+----+----+----+
+| S1 | 35 | 0  | 0  | 25 |
+| S2 | 0  | 30 | 0  | 0  |
+| S3 | 15 | 45 | 30 | 0  |
++----+----+----+----+----+
+Coût total pour la méthode de Balas-Hamer : 2945
+
+-------------------
+Vérification de la présence de cycles dans la matrice de transfert :
+Aucun cycle détecté dans la matrice de transfert.
+
+-------------------
+La matrice de transfert est-elle connexe :
+La matrice de transfert est connexe.
+
+-------------------
+Fin du programme.
