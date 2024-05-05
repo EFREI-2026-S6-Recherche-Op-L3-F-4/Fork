@@ -35,7 +35,7 @@ def main():
         print("\n-------------------")
         print("Application de la méthode de Balas-Hammer...")
         matrice_transfert= balas_hammer(matrice_des_couts[1:], matrice_des_prop[1:])
-        print("Résultat de la matrice de Balas-Hammer :")
+        print("Résultat de la matrice de Balas-Hammer/Transfert :")
         afficher_matrice_transfert(matrice_transfert)
         if matrice_transfert is not None:
             cout_total_balas_hamer = calculer_cout_total(matrice_des_couts[1:], matrice_transfert)
@@ -47,7 +47,7 @@ def main():
             maximiser_transport(matrice_transfert, matrice_des_couts)
 
         print("\n-------------------")
-        print("La matrice de transfert est-elle connexe :")
+        print("La matrice de transfert est-elle connexe ? :")
         liste = verifier_connexite(matrice_transfert)
 
         print("\n-------------------")

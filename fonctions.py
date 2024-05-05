@@ -1,7 +1,7 @@
 import os
-import random
 from collections import deque
 from prettytable import PrettyTable
+
 
 def choisir_fichier(dossier):
     fichiers = os.listdir(dossier)
@@ -19,7 +19,6 @@ def lire_matrice_depuis_fichier(chemin_fichier):
             valeurs_ligne = [int(valeur) for valeur in ligne.strip().split()]
             matrice.append(valeurs_ligne)
     return matrice
-
 
 
 def afficher_matrice_cout(matrice_des_couts):
@@ -88,7 +87,6 @@ def balas_hammer(matrice_des_couts, matrice_des_prop):
         return None
     print("Problème équilibré, nous pouvons appliquer Balas-Hammer : \n")
 
-
     matrice_transfert = [[0] * m for _ in range(n)]
 
     while any(provisions) and any(commandes):  # Continue tant qu'il y a des provisions et des commandes non nulles
@@ -116,11 +114,10 @@ def balas_hammer(matrice_des_couts, matrice_des_prop):
                         matrice_transfert[i][j] += transfer
                         provisions[i] -= transfer
                         commandes[j] -= transfer
-                        print(f"Forçage de remplissage: ({i}, {j}) avec la quantité restante :{transfer}.\n")
+                        print(f"Forçage de remplissage: ({i}, {j}) avec la quantité restante : {transfer}.\n")
             continue
 
-        penalties.sort(key=lambda x:
-(-x[0], x[3]))  # Trier par pénalité maximale, puis par coût minimal
+        penalties.sort(key=lambda x: (-x[0], x[3]))  # Trier par pénalité maximale, puis par coût minimal
         chosen_penalty = penalties[0]
         _, p_type, idx, _, _, min_cost_idx = chosen_penalty
 
@@ -153,6 +150,7 @@ def balas_hammer(matrice_des_couts, matrice_des_prop):
 
     return matrice_transfert
 
+
 def calculer_cout_total(matrice_des_couts, matrice_transfert):
     n = len(matrice_transfert)    # Nombre de lignes
     m = len(matrice_transfert[0]) # Nombre de colonnes
@@ -163,6 +161,8 @@ def calculer_cout_total(matrice_des_couts, matrice_transfert):
             cout_total += matrice_des_couts[i][j] * matrice_transfert[i][j]
 
     return cout_total
+
+
 def detecter_cycle(matrice_transfert):
     n = len(matrice_transfert)  # Nombre de lignes
     m = len(matrice_transfert[0])  # Nombre de colonnes
@@ -199,6 +199,7 @@ def detecter_cycle(matrice_transfert):
     print("Aucun cycle détecté dans la matrice de transfert.")
     return False
 
+
 def maximiser_transport(matrice_transfert, matrice_des_couts):
     n = len(matrice_transfert)
     m = len(matrice_transfert[0])
@@ -230,11 +231,11 @@ def maximiser_transport(matrice_transfert, matrice_des_couts):
 
     print(f"Arête supprimée ou ajustée : {max_edge} pour maximiser le coût.")
 
+
 def verifier_connexite(matrice_transfert):
     n = len(matrice_transfert)
     m = len(matrice_transfert[0])
     visite = [False] * (n + m)  # n lignes + m colonnes
-
 
     def bfs(start):
         queue = deque([start])
@@ -264,13 +265,10 @@ def verifier_connexite(matrice_transfert):
                 comp = ['S' + str(c + 1) if c < n else 'C' + str(c - n + 1) for c in comp]
                 composantes.append(comp)
 
-
-
-
     if len(composantes) == 1:
-        print("La matrice de transfert est connexe.")
+        print("Oui elle l'est")
     else:
-        print("La matrice de transfert est non connexe. Voici les sous-graphes connexes composant la proposition:")
+        print("Non elle ne l'est pas. Voici les sous-graphes connexes composant la proposition:")
         for i, comp in enumerate(composantes):
             print(comp, end=',' if i < len(composantes) - 1 else '\n')
 
@@ -361,5 +359,3 @@ def rendre_connexe(matrice_transfert):
     # Connecter les composantes
     nouvelle_matrice = connecter_composantes(matrice_transfert, composantes, n, m)
     return nouvelle_matrice
-
-
