@@ -78,87 +78,62 @@ def afficher_matrice_transfert(matrice_transfert):
 
 
 def balas_hammer(matrice_des_couts, matrice_des_prop):
-    # Initialisation
     provisions = [ligne[-1] for ligne in matrice_des_prop[:-1]]
     commandes = matrice_des_prop[-1]
     n = len(provisions)
     m = len(commandes)
-    # Vérifiez si le problème est équilibré
+
     if sum(provisions) != sum(commandes):
-        print("Problème non équilibré, nous ne pouvons pas appliquer balas hammer")
-        return(None, None)
-    print("Problème équilibré, nous pouvons appliquer balas hammer")
+        print("Problème non équilibré, nous ne pouvons pas appliquer Balas-Hammer")
+        return None
 
     matrice_transfert = [[0] * m for _ in range(n)]
 
-    # Calculez les pénalités pour chaque ligne et chaque colonne
-    while sum(provisions) > 0 and sum(commandes) > 0:
+    while any(provisions) and any(commandes):  # Continue tant qu'il y a des provisions et des commandes non nulles
         penalties = []
         for i in range(n):
             if provisions[i] > 0:
-                costs = [matrice_des_couts[i][j] for j in range(m) if commandes[j] > 0]
-                if len(costs) > 1:
-                    sorted_costs = sorted(costs)
-                    penalties.append((sorted_costs[1] - sorted_costs[0], 'row', i))
+                active_costs = [(matrice_des_couts[i][j], j) for j in range(m) if commandes[j] > 0]
+                if len(active_costs) > 1:
+                    sorted_costs = sorted(active_costs)
+                    penalty_value = sorted_costs[1][0] - sorted_costs[0][0]
+                    penalties.append((penalty_value, 'row', i, sorted_costs[0][0], provisions[i], sorted_costs[0][1]))
         for j in range(m):
             if commandes[j] > 0:
-                costs = [matrice_des_couts[i][j] for i in range(n) if provisions[i] > 0]
-                if len(costs) > 1:
-                    sorted_costs = sorted(costs)
-                    penalties.append((sorted_costs[1] - sorted_costs[0], 'col', j))
-        # Si aucune pénalité n'est trouvée (s'il reste une seule arête par ligne/colonne) , forcer le remplissage
-        if not penalties:
+                active_costs = [(matrice_des_couts[i][j], i) for i in range(n) if provisions[i] > 0]
+                if len(active_costs) > 1:
+                    sorted_costs = sorted(active_costs)
+                    penalty_value = sorted_costs[1][0] - sorted_costs[0][0]
+                    penalties.append((penalty_value, 'col', j, sorted_costs[0][0], commandes[j], sorted_costs[0][1]))
+
+        if not penalties:  # Si pas de pénalités calculables, forcer le traitement
             for i in range(n):
                 for j in range(m):
                     if provisions[i] > 0 and commandes[j] > 0:
-                        matrice_transfert[i][j] += min(provisions[i], commandes[j])
-                        provisions[i] -= min(provisions[i], commandes[j])
-                        commandes[j] -= min(provisions[i], commandes[j])
-                        print(f"Forçage de remplissage: ({i}, {j}) avec la quantité restante.")
+                        transfer = min(provisions[i], commandes[j])
+                        matrice_transfert[i][j] += transfer
+                        provisions[i] -= transfer
+                        commandes[j] -= transfer
             continue
 
-        # Triez et trouvez la pénalité maximale
-        penalties.sort(reverse=True, key=lambda x: x[0])
-        max_penalty = penalties[0][0]
+        penalties.sort(key=lambda x:
+(-x[0], x[3]))  # Trier par pénalité maximale, puis par coût minimal
+        chosen_penalty = penalties[0]
+        _, p_type, idx, _, _, min_cost_idx = chosen_penalty
 
-        # Identifiez toutes les pénalités maximales
-        max_penalties = [p for p in penalties if p[0] == max_penalty]
-
-        # Afficher les informations sur les pénalités maximales
-        print(f"Pénalité maximale de {max_penalty} trouvée en :")
-        for penalty in max_penalties:
-            if penalty[1] == 'row':
-                print(f" - Ligne {penalty[2]}")
-            else:
-                print(f" - Colonne {penalty[2]}")
-
-        # Sélection aléatoire parmi les pénalités maximales si plusieurs
-        if len(max_penalties) > 1:
-            selected_penalty = random.choice(max_penalties)
-            print("Plusieurs emplacements pour la pénalité maximale ont été détectés.")
-            print(f"Choix aléatoire : {'Ligne' if selected_penalty[1] == 'row' else 'Colonne'} {selected_penalty[2]}")
-        else:
-            selected_penalty = max_penalties[0]
-
-        p_type, idx = selected_penalty[1], selected_penalty[2]
-
-        # Déterminez l'arête à remplir
+        # Effectuer le transfert
         if p_type == 'row':
-            min_cost_index = min((matrice_des_couts[idx][j], j)
-                                 for j in range(m) if commandes[j] > 0)[1]
-            quantity_to_fill = min(provisions[idx], commandes[min_cost_index])
-            print(f"Remplir l'arête ({idx}, {min_cost_index}) avec la quantité {quantity_to_fill}.")
-            matrice_transfert[idx][min_cost_index] += quantity_to_fill
+            quantity_to_fill = min(provisions[idx], commandes[min_cost_idx])
+            matrice_transfert[idx][min_cost_idx] += quantity_to_fill
             provisions[idx] -= quantity_to_fill
-            commandes[min_cost_index] -= quantity_to_fill
-        elif p_type == 'col':
-            min_cost_index = (min((matrice_des_couts[i][idx], i)
-                                  for i in range(n) if provisions[i] > 0))[1]
-            quantity_to_fill = min(provisions[min_cost_index], commandes[idx])
-            print(f"Remplir l'arête ({min_cost_index}, {idx}) avec la quantité {quantity_to_fill}.")
-            matrice_transfert[min_cost_index][idx] += quantity_to_fill
-            provisions[min_cost_index] -= quantity_to_fill
+            commandes[min_cost_idx] -= quantity_to_fill
+        else:
+            quantity_to_fill = min(provisions[min_cost_idx], commandes[idx])
+            matrice_transfert[min_cost_idx][idx] += quantity_to_fill
+            provisions[min_cost_idx] -= quantity_to_fill
             commandes[idx] -= quantity_to_fill
+
+        print(f"Choix final pour maximiser l'efficacité : {'Ligne' if p_type == 'row' else 'Colonne'} {idx}, quantité {quantity_to_fill} transférée")
 
     return matrice_transfert
 
@@ -283,4 +258,4 @@ def verifier_connexite(matrice_transfert):
         for i, comp in enumerate(composantes):
             print(comp, end=',' if i < len(composantes) - 1 else '\n')
 
-        return composantes
+
