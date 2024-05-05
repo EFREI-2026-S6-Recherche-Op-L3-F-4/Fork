@@ -259,3 +259,91 @@ def verifier_connexite(matrice_transfert):
             print(comp, end=',' if i < len(composantes) - 1 else '\n')
 
 
+def identifier_composantes(matrice_transfert, visite, n, m):
+    def bfs(start):
+        queue = deque([start])
+        composante = []
+        while queue:
+            node = queue.popleft()
+            if not visite[node]:
+                visite[node] = True
+                composante.append(node)
+                if node < n:  # C'est une ligne
+                    for j in range(m):
+                        if matrice_transfert[node][j] > 0 and not visite[j + n]:
+                            queue.append(j + n)
+                else:  # C'est une colonne
+                    for i in range(n):
+                        if matrice_transfert[i][node - n] > 0 and not visite[i]:
+                            queue.append(i)
+        return composante
+
+    composantes = []
+    for i in range(n + m):
+        if not visite[i]:
+            comp = bfs(i)
+            if comp:
+                composantes.append(comp)
+    return composantes
+
+
+def identifier_composantes(matrice_transfert, visite, n, m):
+    def bfs(start):
+        queue = deque([start])
+        composante = []
+        while queue:
+            node = queue.popleft()
+            if not visite[node]:
+                visite[node] = True
+                composante.append(node)
+                if node < n:
+                    for j in range(m):
+                        if matrice_transfert[node][j] > 0 and not visite[j + n]:
+                            queue.append(j + n)
+                else:
+                    for i in range(n):
+                        if matrice_transfert[i][node - n] > 0 and not visite[i]:
+                            queue.append(i)
+        return composante
+
+    composantes = []
+    for i in range(n + m):
+        if not visite[i]:
+            comp = bfs(i)
+            if comp:
+                composantes.append(comp)
+    return composantes
+
+
+def connecter_composantes(matrice_transfert, composantes, n, m):
+    for i in range(len(composantes) - 1):
+        last_node = composantes[i][-1]
+        first_node = composantes[i+1][0]
+
+        if last_node < n and first_node >= n:  # Ligne à colonne
+            matrice_transfert[last_node][first_node - n] = 1  # Transfert minimal
+        elif last_node >= n and first_node < n:  # Colonne à ligne
+            matrice_transfert[first_node][last_node - n] = 1  # Transfert minimal
+
+    print("Les composantes ont été connectées pour rendre le graphe connexe.")
+    return matrice_transfert
+
+
+def rendre_connexe(matrice_transfert):
+    n = len(matrice_transfert)
+    m = len(matrice_transfert[0])
+    visite = [False] * (n + m)
+
+    # Identifier les composantes connexes existantes
+    composantes = identifier_composantes(matrice_transfert, visite, n, m)
+
+    # Si le graphe est déjà connexe, rien à faire
+    if len(composantes) == 1:
+        print("Le graphe est déjà connexe.")
+        return matrice_transfert
+
+    # Connecter les composantes
+    nouvelle_matrice = connecter_composantes(matrice_transfert, composantes, n, m)
+    return nouvelle_matrice
+
+

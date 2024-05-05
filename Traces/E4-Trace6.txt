@@ -32,33 +32,17 @@ Coût total pour la méthode du coin nord-ouest : 3035
 
 -------------------
 Application de la méthode de Balas-Hammer :
-Problème équilibré, nous pouvons appliquer balas hammer
-Pénalité maximale de 8 trouvée en :
- - Colonne 3
-Remplir l'arête (0, 3) avec la quantité 25.
-Pénalité maximale de 6 trouvée en :
- - Colonne 0
-Remplir l'arête (0, 0) avec la quantité 35.
-Pénalité maximale de 5 trouvée en :
- - Colonne 1
- - Colonne 2
-Plusieurs emplacements pour la pénalité maximale ont été détectés.
-Choix aléatoire : Colonne 1
-Remplir l'arête (1, 1) avec la quantité 30.
-Pénalité maximale de 1 trouvée en :
- - Ligne 2
-Remplir l'arête (2, 0) avec la quantité 15.
-Pénalité maximale de 1 trouvée en :
- - Ligne 2
-Remplir l'arête (2, 2) avec la quantité 30.
-Forçage de remplissage: (2, 1) avec la quantité restante.
+Choix final pour maximiser l'efficacité : Colonne 3, quantité 25 transférée
+Choix final pour maximiser l'efficacité : Colonne 0, quantité 35 transférée
+Choix final pour maximiser l'efficacité : Colonne 2, quantité 30 transférée
+Choix final pour maximiser l'efficacité : Ligne 2, quantité 15 transférée
 Matrice de transfert obtenue :
 +----+----+----+----+----+
 |    | C1 | C2 | C3 | C4 |
 +----+----+----+----+----+
 | S1 | 35 | 0  | 0  | 25 |
-| S2 | 0  | 30 | 0  | 0  |
-| S3 | 15 | 45 | 30 | 0  |
+| S2 | 0  | 0  | 30 | 0  |
+| S3 | 15 | 75 | 0  | 0  |
 +----+----+----+----+----+
 Coût total pour la méthode de Balas-Hamer : 2945
 
@@ -68,7 +52,8 @@ Aucun cycle détecté dans la matrice de transfert.
 
 -------------------
 La matrice de transfert est-elle connexe :
-La matrice de transfert est connexe.
+La matrice de transfert est non connexe. Voici les sous-graphes connexes composant la proposition:
+['S1', 'C1', 'C4', 'S3', 'C2'],['S2', 'C3']
 
 -------------------
 Fin du programme.

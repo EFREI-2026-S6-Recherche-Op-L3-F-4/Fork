@@ -83,340 +83,59 @@ Coût total pour la méthode du coin nord-ouest : 279170
 
 -------------------
 Application de la méthode de Balas-Hammer :
-Problème équilibré, nous pouvons appliquer balas hammer
-Pénalité maximale de 10 trouvée en :
- - Colonne 0
- - Colonne 1
- - Colonne 2
- - Colonne 3
- - Colonne 4
- - Colonne 5
- - Colonne 6
- - Colonne 7
- - Colonne 8
- - Colonne 9
-Plusieurs emplacements pour la pénalité maximale ont été détectés.
-Choix aléatoire : Colonne 3
-Remplir l'arête (0, 3) avec la quantité 10.
-Pénalité maximale de 10 trouvée en :
- - Colonne 0
- - Colonne 1
- - Colonne 2
- - Colonne 3
- - Colonne 4
- - Colonne 5
- - Colonne 6
- - Colonne 7
- - Colonne 8
- - Colonne 9
-Plusieurs emplacements pour la pénalité maximale ont été détectés.
-Choix aléatoire : Colonne 8
-Remplir l'arête (1, 8) avec la quantité 20.
-Pénalité maximale de 10 trouvée en :
- - Colonne 0
- - Colonne 1
- - Colonne 2
- - Colonne 3
- - Colonne 4
- - Colonne 5
- - Colonne 6
- - Colonne 7
- - Colonne 8
- - Colonne 9
-Plusieurs emplacements pour la pénalité maximale ont été détectés.
-Choix aléatoire : Colonne 3
-Remplir l'arête (2, 3) avec la quantité 30.
-Pénalité maximale de 10 trouvée en :
- - Colonne 0
- - Colonne 2
- - Colonne 3
- - Colonne 4
- - Colonne 5
- - Colonne 6
- - Colonne 7
- - Colonne 8
- - Colonne 9
-Plusieurs emplacements pour la pénalité maximale ont été détectés.
-Choix aléatoire : Colonne 0
-Remplir l'arête (3, 0) avec la quantité 40.
-Pénalité maximale de 11 trouvée en :
- - Colonne 1
-Remplir l'arête (4, 1) avec la quantité 50.
-Pénalité maximale de 10 trouvée en :
- - Colonne 0
- - Colonne 1
- - Colonne 2
- - Colonne 3
- - Colonne 4
- - Colonne 5
- - Colonne 6
- - Colonne 7
- - Colonne 8
- - Colonne 9
-Plusieurs emplacements pour la pénalité maximale ont été détectés.
-Choix aléatoire : Colonne 1
-Remplir l'arête (5, 1) avec la quantité 60.
-Pénalité maximale de 10 trouvée en :
- - Colonne 0
- - Colonne 1
- - Colonne 2
- - Colonne 3
- - Colonne 4
- - Colonne 5
- - Colonne 6
- - Colonne 7
- - Colonne 8
- - Colonne 9
-Plusieurs emplacements pour la pénalité maximale ont été détectés.
-Choix aléatoire : Colonne 7
-Remplir l'arête (6, 7) avec la quantité 70.
-Pénalité maximale de 10 trouvée en :
- - Colonne 0
- - Colonne 1
- - Colonne 2
- - Colonne 3
- - Colonne 4
- - Colonne 5
- - Colonne 6
- - Colonne 7
- - Colonne 8
- - Colonne 9
-Plusieurs emplacements pour la pénalité maximale ont été détectés.
-Choix aléatoire : Colonne 4
-Remplir l'arête (7, 4) avec la quantité 80.
-Pénalité maximale de 10 trouvée en :
- - Colonne 0
- - Colonne 1
- - Colonne 2
- - Colonne 3
- - Colonne 4
- - Colonne 5
- - Colonne 6
- - Colonne 7
- - Colonne 8
- - Colonne 9
-Plusieurs emplacements pour la pénalité maximale ont été détectés.
-Choix aléatoire : Colonne 5
-Remplir l'arête (8, 5) avec la quantité 90.
-Pénalité maximale de 10 trouvée en :
- - Colonne 0
- - Colonne 1
- - Colonne 2
- - Colonne 3
- - Colonne 4
- - Colonne 5
- - Colonne 6
- - Colonne 7
- - Colonne 8
- - Colonne 9
-Plusieurs emplacements pour la pénalité maximale ont été détectés.
-Choix aléatoire : Colonne 2
-Remplir l'arête (9, 2) avec la quantité 100.
-Pénalité maximale de 10 trouvée en :
- - Colonne 0
- - Colonne 1
- - Colonne 2
- - Colonne 3
- - Colonne 4
- - Colonne 5
- - Colonne 6
- - Colonne 7
- - Colonne 8
- - Colonne 9
-Plusieurs emplacements pour la pénalité maximale ont été détectés.
-Choix aléatoire : Colonne 4
-Remplir l'arête (10, 4) avec la quantité 110.
-Pénalité maximale de 10 trouvée en :
- - Colonne 0
- - Colonne 1
- - Colonne 2
- - Colonne 3
- - Colonne 4
- - Colonne 5
- - Colonne 6
- - Colonne 7
- - Colonne 8
- - Colonne 9
-Plusieurs emplacements pour la pénalité maximale ont été détectés.
-Choix aléatoire : Colonne 5
-Remplir l'arête (11, 5) avec la quantité 120.
-Pénalité maximale de 10 trouvée en :
- - Colonne 0
- - Colonne 1
- - Colonne 2
- - Colonne 3
- - Colonne 4
- - Colonne 5
- - Colonne 6
- - Colonne 7
- - Colonne 8
- - Colonne 9
-Plusieurs emplacements pour la pénalité maximale ont été détectés.
-Choix aléatoire : Colonne 6
-Remplir l'arête (12, 6) avec la quantité 130.
-Pénalité maximale de 10 trouvée en :
- - Colonne 0
- - Colonne 1
- - Colonne 2
- - Colonne 3
- - Colonne 4
- - Colonne 5
- - Colonne 6
- - Colonne 7
- - Colonne 8
- - Colonne 9
-Plusieurs emplacements pour la pénalité maximale ont été détectés.
-Choix aléatoire : Colonne 8
-Remplir l'arête (13, 8) avec la quantité 140.
-Pénalité maximale de 10 trouvée en :
- - Colonne 0
- - Colonne 1
- - Colonne 2
- - Colonne 3
- - Colonne 4
- - Colonne 5
- - Colonne 6
- - Colonne 7
- - Colonne 8
- - Colonne 9
-Plusieurs emplacements pour la pénalité maximale ont été détectés.
-Choix aléatoire : Colonne 4
-Remplir l'arête (14, 4) avec la quantité 10.
-Pénalité maximale de 10 trouvée en :
- - Colonne 0
- - Colonne 1
- - Colonne 2
- - Colonne 3
- - Colonne 5
- - Colonne 6
- - Colonne 7
- - Colonne 8
- - Colonne 9
-Plusieurs emplacements pour la pénalité maximale ont été détectés.
-Choix aléatoire : Colonne 6
-Remplir l'arête (14, 6) avec la quantité 110.
-Pénalité maximale de 10 trouvée en :
- - Colonne 0
- - Colonne 1
- - Colonne 2
- - Colonne 3
- - Colonne 5
- - Colonne 7
- - Colonne 8
- - Colonne 9
-Plusieurs emplacements pour la pénalité maximale ont été détectés.
-Choix aléatoire : Colonne 0
-Remplir l'arête (14, 0) avec la quantité 30.
-Pénalité maximale de 10 trouvée en :
- - Colonne 0
- - Colonne 1
- - Colonne 2
- - Colonne 3
- - Colonne 5
- - Colonne 7
- - Colonne 8
- - Colonne 9
-Plusieurs emplacements pour la pénalité maximale ont été détectés.
-Choix aléatoire : Colonne 5
-Remplir l'arête (15, 5) avec la quantité 10.
-Pénalité maximale de 10 trouvée en :
- - Colonne 0
- - Colonne 1
- - Colonne 2
- - Colonne 3
- - Colonne 7
- - Colonne 8
- - Colonne 9
-Plusieurs emplacements pour la pénalité maximale ont été détectés.
-Choix aléatoire : Colonne 2
-Remplir l'arête (15, 2) avec la quantité 60.
-Pénalité maximale de 10 trouvée en :
- - Colonne 0
- - Colonne 1
- - Colonne 3
- - Colonne 7
- - Colonne 8
- - Colonne 9
-Plusieurs emplacements pour la pénalité maximale ont été détectés.
-Choix aléatoire : Colonne 3
-Remplir l'arête (15, 3) avec la quantité 90.
-Pénalité maximale de 10 trouvée en :
- - Colonne 0
- - Colonne 1
- - Colonne 3
- - Colonne 7
- - Colonne 8
- - Colonne 9
-Plusieurs emplacements pour la pénalité maximale ont été détectés.
-Choix aléatoire : Colonne 8
-Remplir l'arête (16, 8) avec la quantité 120.
-Pénalité maximale de 10 trouvée en :
- - Colonne 0
- - Colonne 1
- - Colonne 3
- - Colonne 7
- - Colonne 9
-Plusieurs emplacements pour la pénalité maximale ont été détectés.
-Choix aléatoire : Colonne 3
-Remplir l'arête (16, 3) avec la quantité 50.
-Pénalité maximale de 10 trouvée en :
- - Colonne 0
- - Colonne 1
- - Colonne 7
- - Colonne 9
-Plusieurs emplacements pour la pénalité maximale ont été détectés.
-Choix aléatoire : Colonne 7
-Remplir l'arête (17, 7) avec la quantité 180.
-Pénalité maximale de 10 trouvée en :
- - Colonne 0
- - Colonne 1
- - Colonne 7
- - Colonne 9
-Plusieurs emplacements pour la pénalité maximale ont été détectés.
-Choix aléatoire : Colonne 1
-Remplir l'arête (18, 1) avec la quantité 30.
-Pénalité maximale de 10 trouvée en :
- - Colonne 0
- - Colonne 7
- - Colonne 9
-Plusieurs emplacements pour la pénalité maximale ont été détectés.
-Choix aléatoire : Colonne 0
-Remplir l'arête (18, 0) avec la quantité 50.
-Pénalité maximale de 10 trouvée en :
- - Colonne 7
- - Colonne 9
-Plusieurs emplacements pour la pénalité maximale ont été détectés.
-Choix aléatoire : Colonne 9
-Remplir l'arête (18, 9) avec la quantité 110.
-Pénalité maximale de 2 trouvée en :
- - Ligne 19
-Remplir l'arête (19, 7) avec la quantité 10.
-Forçage de remplissage: (19, 9) avec la quantité restante.
+Choix final pour maximiser l'efficacité : Colonne 0, quantité 10 transférée
+Choix final pour maximiser l'efficacité : Colonne 0, quantité 20 transférée
+Choix final pour maximiser l'efficacité : Colonne 0, quantité 30 transférée
+Choix final pour maximiser l'efficacité : Colonne 0, quantité 40 transférée
+Choix final pour maximiser l'efficacité : Colonne 1, quantité 50 transférée
+Choix final pour maximiser l'efficacité : Colonne 0, quantité 20 transférée
+Choix final pour maximiser l'efficacité : Colonne 1, quantité 40 transférée
+Choix final pour maximiser l'efficacité : Colonne 1, quantité 50 transférée
+Choix final pour maximiser l'efficacité : Colonne 2, quantité 20 transférée
+Choix final pour maximiser l'efficacité : Colonne 2, quantité 80 transférée
+Choix final pour maximiser l'efficacité : Colonne 2, quantité 60 transférée
+Choix final pour maximiser l'efficacité : Colonne 3, quantité 30 transférée
+Choix final pour maximiser l'efficacité : Colonne 3, quantité 100 transférée
+Choix final pour maximiser l'efficacité : Colonne 3, quantité 50 transférée
+Choix final pour maximiser l'efficacité : Colonne 4, quantité 60 transférée
+Choix final pour maximiser l'efficacité : Colonne 4, quantité 120 transférée
+Choix final pour maximiser l'efficacité : Colonne 4, quantité 20 transférée
+Choix final pour maximiser l'efficacité : Colonne 5, quantité 110 transférée
+Choix final pour maximiser l'efficacité : Colonne 5, quantité 110 transférée
+Choix final pour maximiser l'efficacité : Colonne 6, quantité 30 transférée
+Choix final pour maximiser l'efficacité : Colonne 6, quantité 150 transférée
+Choix final pour maximiser l'efficacité : Colonne 6, quantité 60 transférée
+Choix final pour maximiser l'efficacité : Colonne 7, quantité 100 transférée
+Choix final pour maximiser l'efficacité : Colonne 7, quantité 160 transférée
+Choix final pour maximiser l'efficacité : Colonne 8, quantité 10 transférée
+Choix final pour maximiser l'efficacité : Colonne 8, quantité 180 transférée
+Choix final pour maximiser l'efficacité : Colonne 8, quantité 90 transférée
+Choix final pour maximiser l'efficacité : Colonne 9, quantité 100 transférée
 Matrice de transfert obtenue :
-+-----+----+----+-----+----+-----+-----+-----+-----+-----+-----+
-|     | C1 | C2 |  C3 | C4 |  C5 |  C6 |  C7 |  C8 |  C9 | C10 |
-+-----+----+----+-----+----+-----+-----+-----+-----+-----+-----+
-|  S1 | 0  | 0  |  0  | 10 |  0  |  0  |  0  |  0  |  0  |  0  |
-|  S2 | 0  | 0  |  0  | 0  |  0  |  0  |  0  |  0  |  20 |  0  |
-|  S3 | 0  | 0  |  0  | 30 |  0  |  0  |  0  |  0  |  0  |  0  |
-|  S4 | 40 | 0  |  0  | 0  |  0  |  0  |  0  |  0  |  0  |  0  |
-|  S5 | 0  | 50 |  0  | 0  |  0  |  0  |  0  |  0  |  0  |  0  |
-|  S6 | 0  | 60 |  0  | 0  |  0  |  0  |  0  |  0  |  0  |  0  |
-|  S7 | 0  | 0  |  0  | 0  |  0  |  0  |  0  |  70 |  0  |  0  |
-|  S8 | 0  | 0  |  0  | 0  |  80 |  0  |  0  |  0  |  0  |  0  |
-|  S9 | 0  | 0  |  0  | 0  |  0  |  90 |  0  |  0  |  0  |  0  |
-| S10 | 0  | 0  | 100 | 0  |  0  |  0  |  0  |  0  |  0  |  0  |
-| S11 | 0  | 0  |  0  | 0  | 110 |  0  |  0  |  0  |  0  |  0  |
-| S12 | 0  | 0  |  0  | 0  |  0  | 120 |  0  |  0  |  0  |  0  |
-| S13 | 0  | 0  |  0  | 0  |  0  |  0  | 130 |  0  |  0  |  0  |
-| S14 | 0  | 0  |  0  | 0  |  0  |  0  |  0  |  0  | 140 |  0  |
-| S15 | 30 | 0  |  0  | 0  |  10 |  0  | 110 |  0  |  0  |  0  |
-| S16 | 0  | 0  |  60 | 90 |  0  |  10 |  0  |  0  |  0  |  0  |
-| S17 | 0  | 0  |  0  | 50 |  0  |  0  |  0  |  0  | 120 |  0  |
-| S18 | 0  | 0  |  0  | 0  |  0  |  0  |  0  | 180 |  0  |  0  |
-| S19 | 50 | 30 |  0  | 0  |  0  |  0  |  0  |  0  |  0  | 110 |
-| S20 | 0  | 0  |  0  | 0  |  0  |  0  |  0  |  10 |  0  | 190 |
-+-----+----+----+-----+----+-----+-----+-----+-----+-----+-----+
++-----+----+----+----+-----+-----+-----+-----+-----+-----+-----+
+|     | C1 | C2 | C3 |  C4 |  C5 |  C6 |  C7 |  C8 |  C9 | C10 |
++-----+----+----+----+-----+-----+-----+-----+-----+-----+-----+
+|  S1 | 10 | 0  | 0  |  0  |  0  |  0  |  0  |  0  |  0  |  0  |
+|  S2 | 20 | 0  | 0  |  0  |  0  |  0  |  0  |  0  |  0  |  0  |
+|  S3 | 30 | 0  | 0  |  0  |  0  |  0  |  0  |  0  |  0  |  0  |
+|  S4 | 40 | 0  | 0  |  0  |  0  |  0  |  0  |  0  |  0  |  0  |
+|  S5 | 0  | 50 | 0  |  0  |  0  |  0  |  0  |  0  |  0  |  0  |
+|  S6 | 20 | 40 | 0  |  0  |  0  |  0  |  0  |  0  |  0  |  0  |
+|  S7 | 0  | 50 | 20 |  0  |  0  |  0  |  0  |  0  |  0  |  0  |
+|  S8 | 0  | 0  | 80 |  0  |  0  |  0  |  0  |  0  |  0  |  0  |
+|  S9 | 0  | 0  | 60 |  30 |  0  |  0  |  0  |  0  |  0  |  0  |
+| S10 | 0  | 0  | 0  | 100 |  0  |  0  |  0  |  0  |  0  |  0  |
+| S11 | 0  | 0  | 0  |  50 |  60 |  0  |  0  |  0  |  0  |  0  |
+| S12 | 0  | 0  | 0  |  0  | 120 |  0  |  0  |  0  |  0  |  0  |
+| S13 | 0  | 0  | 0  |  0  |  20 | 110 |  0  |  0  |  0  |  0  |
+| S14 | 0  | 0  | 0  |  0  |  0  | 110 |  30 |  0  |  0  |  0  |
+| S15 | 0  | 0  | 0  |  0  |  0  |  0  | 150 |  0  |  0  |  0  |
+| S16 | 0  | 0  | 0  |  0  |  0  |  0  |  60 | 100 |  0  |  0  |
+| S17 | 0  | 0  | 0  |  0  |  0  |  0  |  0  | 160 |  10 |  0  |
+| S18 | 0  | 0  | 0  |  0  |  0  |  0  |  0  |  0  | 180 |  0  |
+| S19 | 0  | 0  | 0  |  0  |  0  |  0  |  0  |  0  |  90 | 100 |
+| S20 | 0  | 0  | 0  |  0  |  0  |  0  |  0  |  0  |  0  | 200 |
++-----+----+----+----+-----+-----+-----+-----+-----+-----+-----+
 Coût total pour la méthode de Balas-Hamer : 279150
 
 -------------------
@@ -425,8 +144,7 @@ Aucun cycle détecté dans la matrice de transfert.
 
 -------------------
 La matrice de transfert est-elle connexe :
-La matrice de transfert est non connexe. Voici les sous-graphes connexes composant la proposition:
-['S1', 'C4', 'S3', 'S16', 'S17', 'C3', 'C6', 'C9', 'S10', 'S9', 'S12', 'S2', 'S14'],['S4', 'C1', 'S15', 'S19', 'C5', 'C7', 'C2', 'C10', 'S8', 'S11', 'S13', 'S5', 'S6', 'S20', 'C8', 'S7', 'S18']
+La matrice de transfert est connexe.
 
 -------------------
 Fin du programme.

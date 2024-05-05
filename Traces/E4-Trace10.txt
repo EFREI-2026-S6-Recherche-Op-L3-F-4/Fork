@@ -32,26 +32,12 @@ Coût total pour la méthode du coin nord-ouest : 218500
 
 -------------------
 Application de la méthode de Balas-Hammer :
-Problème équilibré, nous pouvons appliquer balas hammer
-Pénalité maximale de 49 trouvée en :
- - Colonne 0
-Remplir l'arête (1, 0) avec la quantité 500.
-Pénalité maximale de 20 trouvée en :
- - Colonne 1
-Remplir l'arête (0, 1) avec la quantité 500.
-Pénalité maximale de 0 trouvée en :
- - Ligne 2
-Remplir l'arête (2, 3) avec la quantité 500.
-Pénalité maximale de 22 trouvée en :
- - Ligne 2
-Remplir l'arête (2, 6) avec la quantité 500.
-Pénalité maximale de 1 trouvée en :
- - Ligne 2
-Remplir l'arête (2, 4) avec la quantité 500.
-Pénalité maximale de 4 trouvée en :
- - Ligne 2
-Remplir l'arête (2, 5) avec la quantité 500.
-Forçage de remplissage: (2, 2) avec la quantité restante.
+Choix final pour maximiser l'efficacité : Colonne 0, quantité 500 transférée
+Choix final pour maximiser l'efficacité : Colonne 1, quantité 500 transférée
+Choix final pour maximiser l'efficacité : Ligne 2, quantité 500 transférée
+Choix final pour maximiser l'efficacité : Ligne 2, quantité 500 transférée
+Choix final pour maximiser l'efficacité : Ligne 2, quantité 500 transférée
+Choix final pour maximiser l'efficacité : Ligne 2, quantité 500 transférée
 Matrice de transfert obtenue :
 +----+-----+-----+-----+-----+-----+-----+-----+
 |    |  C1 |  C2 |  C3 |  C4 |  C5 |  C6 |  C7 |
