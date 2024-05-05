@@ -86,6 +86,8 @@ def balas_hammer(matrice_des_couts, matrice_des_prop):
     if sum(provisions) != sum(commandes):
         print("Problème non équilibré, nous ne pouvons pas appliquer Balas-Hammer")
         return None
+    print("Problème équilibré, nous pouvons appliquer Balas-Hammer : \n")
+
 
     matrice_transfert = [[0] * m for _ in range(n)]
 
@@ -114,6 +116,7 @@ def balas_hammer(matrice_des_couts, matrice_des_prop):
                         matrice_transfert[i][j] += transfer
                         provisions[i] -= transfer
                         commandes[j] -= transfer
+                        print(f"Forçage de remplissage: ({i}, {j}) avec la quantité restante :{transfer}.\n")
             continue
 
         penalties.sort(key=lambda x:
@@ -121,19 +124,32 @@ def balas_hammer(matrice_des_couts, matrice_des_prop):
         chosen_penalty = penalties[0]
         _, p_type, idx, _, _, min_cost_idx = chosen_penalty
 
+        max_penalty = penalties[0][0]
+
+        # Identifiez toutes les pénalités maximales
+        max_penalties = [p for p in penalties if p[0] == max_penalty]
+
+        # Afficher les informations sur les pénalités maximales
+        print(f"Pénalité maximale de {max_penalty} trouvée en :")
+        for penalty in max_penalties:
+            if penalty[1] == 'row':
+                print(f" - Ligne {penalty[2]}")
+            else:
+                print(f" - Colonne {penalty[2]}")
+
         # Effectuer le transfert
         if p_type == 'row':
             quantity_to_fill = min(provisions[idx], commandes[min_cost_idx])
+            print(f"Remplir l'arête ({idx}, {min_cost_idx}) avec la quantité {quantity_to_fill}.")
             matrice_transfert[idx][min_cost_idx] += quantity_to_fill
             provisions[idx] -= quantity_to_fill
             commandes[min_cost_idx] -= quantity_to_fill
         else:
             quantity_to_fill = min(provisions[min_cost_idx], commandes[idx])
+            print(f"Remplir l'arête ({min_cost_idx}, {idx}) avec la quantité {quantity_to_fill}.")
             matrice_transfert[min_cost_idx][idx] += quantity_to_fill
             provisions[min_cost_idx] -= quantity_to_fill
             commandes[idx] -= quantity_to_fill
-
-        print(f"Choix final pour maximiser l'efficacité : {'Ligne' if p_type == 'row' else 'Colonne'} {idx}, quantité {quantity_to_fill} transférée")
 
     return matrice_transfert
 

@@ -23,19 +23,19 @@ def main():
         afficher_matrice_proptrans(matrice_des_prop[1:])
 
         print("\n-------------------")
-        print("Application de la méthode du coin nord-ouest :")
+        print("Application de la méthode du coin nord-ouest...")
         matrice_des_prop = lire_matrice_depuis_fichier(chemin_fichier)
         matrice_initiale = coin_nord_ouest(matrice_des_prop[1:])
-        print("Résultat de la méthode du coin nord-ouest :")
+        print("Résultat de la matrice du coin nord-ouest :")
         afficher_matrice_transfert(matrice_initiale)
         cout_total_nord_ouest = calculer_cout_total(matrice_des_couts[1:], matrice_initiale)
         print("Coût total pour la méthode du coin nord-ouest :", cout_total_nord_ouest)
 
 
         print("\n-------------------")
-        print("Application de la méthode de Balas-Hammer :")
+        print("Application de la méthode de Balas-Hammer...")
         matrice_transfert= balas_hammer(matrice_des_couts[1:], matrice_des_prop[1:])
-        print("Matrice de transfert obtenue :")
+        print("Résultat de la matrice de Balas-Hammer :")
         afficher_matrice_transfert(matrice_transfert)
         if matrice_transfert is not None:
             cout_total_balas_hamer = calculer_cout_total(matrice_des_couts[1:], matrice_transfert)
