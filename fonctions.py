@@ -301,49 +301,37 @@ def identifier_composantes(matrice_transfert, visite, n, m):
     return composantes
 
 
-def identifier_composantes(matrice_transfert, visite, n, m):
-    def bfs(start):
-        queue = deque([start])
-        composante = []
-        while queue:
-            node = queue.popleft()
-            if not visite[node]:
-                visite[node] = True
-                composante.append(node)
-                if node < n:
-                    for j in range(m):
-                        if matrice_transfert[node][j] > 0 and not visite[j + n]:
-                            queue.append(j + n)
-                else:
-                    for i in range(n):
-                        if matrice_transfert[i][node - n] > 0 and not visite[i]:
-                            queue.append(i)
-        return composante
-
-    composantes = []
-    for i in range(n + m):
-        if not visite[i]:
-            comp = bfs(i)
-            if comp:
-                composantes.append(comp)
-    return composantes
-
-
-def connecter_composantes(matrice_transfert, composantes, n, m):
-    for i in range(len(composantes) - 1):
-        last_node = composantes[i][-1]
-        first_node = composantes[i+1][0]
-
-        if last_node < n and first_node >= n:  # Ligne à colonne
-            matrice_transfert[last_node][first_node - n] = 1  # Transfert minimal
-        elif last_node >= n and first_node < n:  # Colonne à ligne
-            matrice_transfert[first_node][last_node - n] = 1  # Transfert minimal
-
+def connecter_composantes(matrice_transfert, composantes, n, m, matrice_des_couts):
+    # Tant qu'il y a plus d'une composante, nous devons les connecter
+    while len(composantes) > 1:
+        # Trouver le sous-graphe avec le plus petit coût
+        min_cost = float('inf')
+        min_s = -1
+        min_c = -1
+        for i in range(len(composantes)):
+            for node in composantes[i]:
+                if node >= n:  # C'est un C
+                    for s in range(n):
+                        # Check if indices are within the range
+                        if s < len(matrice_des_couts) and node-n < len(matrice_des_couts[s]):
+                            if matrice_des_couts[s][node-n] < min_cost and not any(s in comp for comp in composantes if comp != composantes[i]):
+                                min_cost = matrice_des_couts[s][node-n]
+                                min_s = s
+                                min_c = node
+        # Connecter le S et le C avec le coût le plus bas
+        if min_s != -1 and min_c != -1:
+            matrice_transfert[min_s][min_c-n] = 'X'  # Marquer le lien avec un X
+            print(f"Connecté S{min_s+1} à C{min_c-n+1} avec un coût de {min_cost}")
+            # Fusionner les composantes connectées
+            for comp in composantes:
+                if min_s in comp:
+                    composantes[composantes.index(comp)] += [min_c]
+                    break
+            composantes = [comp for comp in composantes if min_s not in comp or min_c not in comp]
     print("Les composantes ont été connectées pour rendre le graphe connexe.")
     return matrice_transfert
 
-
-def rendre_connexe(matrice_transfert):
+def rendre_connexe(matrice_transfert, matrice_des_couts):
     n = len(matrice_transfert)
     m = len(matrice_transfert[0])
     visite = [False] * (n + m)
@@ -357,5 +345,5 @@ def rendre_connexe(matrice_transfert):
         return matrice_transfert
 
     # Connecter les composantes
-    nouvelle_matrice = connecter_composantes(matrice_transfert, composantes, n, m)
+    nouvelle_matrice = connecter_composantes(matrice_transfert, composantes, n, m, matrice_des_couts)
     return nouvelle_matrice

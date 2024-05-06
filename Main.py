@@ -1,5 +1,6 @@
 from fonctions import *
 
+
 def main():
     chemin_dossier = os.path.join(os.path.dirname(__file__), 'Fichiers_tests')
 
@@ -31,7 +32,6 @@ def main():
         cout_total_nord_ouest = calculer_cout_total(matrice_des_couts[1:], matrice_initiale)
         print("Coût total pour la méthode du coin nord-ouest :", cout_total_nord_ouest)
 
-
         print("\n-------------------")
         print("Application de la méthode de Balas-Hammer...")
         matrice_transfert= balas_hammer(matrice_des_couts[1:], matrice_des_prop[1:])
@@ -49,6 +49,13 @@ def main():
         print("\n-------------------")
         print("La matrice de transfert est-elle connexe ? :")
         liste = verifier_connexite(matrice_transfert)
+
+        print("\n-------------------")
+        print("Rendre la matrice de transfert connexe si elle ne l'est pas :")
+        verifier_connexite(matrice_transfert)
+        matrice_transfert = rendre_connexe(matrice_transfert, matrice_des_couts)
+        print("La matrice de transfert après avoir rendu connexe :")
+        afficher_matrice_transfert(matrice_transfert)
 
         print("\n-------------------")
         print("Fin du programme.")
