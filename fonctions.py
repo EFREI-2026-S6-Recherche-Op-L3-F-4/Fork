@@ -267,6 +267,7 @@ def verifier_connexite(matrice_transfert):
 
     if len(composantes) == 1:
         print("Oui elle l'est")
+        return True
     else:
         print("Non elle ne l'est pas. Voici les sous-graphes connexes composant la proposition:")
         for i, comp in enumerate(composantes):
@@ -333,8 +334,15 @@ def connecter_composantes(matrice_transfert, composantes, n, m, matrice_des_cout
 
 def rendre_connexe(composantes, matrice_transfert, matrice_cout):
     # Exemple pour composantes: [['S1', 'C1', 'C4', 'S3', 'C2'], ['S2', 'C3']]
+
     max_length = max(len(comp) for comp in composantes)  # Find the length of the largest list
-    smaller_lists_indices = [i for i, comp in enumerate(composantes) if len(comp) < max_length]  # Find indices of smaller lists
+    # Vérifiez si toutes les listes ont la même longueur
+    if all(len(comp) == len(composantes[0]) for comp in composantes):
+        # Ajoutez tous les indices sauf le premier à smaller_lists_indices
+        smaller_lists_indices = list(range(1, len(composantes)))
+    else:
+        # Trouvez les indices des listes plus petites
+        smaller_lists_indices = [i for i, comp in enumerate(composantes) if len(comp) < max_length]
     matrice_des_couts = matrice_cout[1:-1]
     matrice_des_couts = [row[:-1] for row in matrice_des_couts]
 
@@ -342,19 +350,27 @@ def rendre_connexe(composantes, matrice_transfert, matrice_cout):
 
     liste_grande = composantes[0]
     liste2 = []
+    comparaison = []
+    index = []
     for i in smaller_lists_indices:
         liste2.append(composantes[i])
     for y in liste2:
         for z in range(len(y)):
-            li = []
+
             if y[z][0] == "S":
-                copie.pop(int(y[z][1])-1)
+                oui = int(y[z][1]) - 1
             if y[z][0] == "C":
-                for i in range(len(copie)):
-                    li.append(int(copie[i][int(y[z][1])-1]))
+                for i in range(len(matrice_transfert)):
+                    if not i==oui:
+                        comparaison.append(int(matrice_des_couts[i][int(y[z][1])-1]))
+                        index.append(i)
+                mini = min(comparaison)
+                index2 = comparaison.index(mini)
+                matrice_transfert[index[index2]][int(y[z][1]) - 1] = "X"
+        comparaison=[]
 
 
-    print(matrice_transfert)
-    print(matrice_des_couts)
-    print(copie)
+    print("matrice de transfert", matrice_transfert)
+    print("matrice des couts", matrice_des_couts)
+
     return matrice_transfert
