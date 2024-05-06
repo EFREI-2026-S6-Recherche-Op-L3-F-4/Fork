@@ -52,8 +52,8 @@ def main():
 
         print("\n-------------------")
         print("Rendre la matrice de transfert connexe si elle ne l'est pas :")
-        verifier_connexite(matrice_transfert)
-        matrice_transfert = rendre_connexe(matrice_transfert, matrice_des_couts)
+        composantes = verifier_connexite(matrice_transfert)
+        rendre_connexe(composantes, matrice_transfert, matrice_des_couts)
         print("La matrice de transfert après avoir rendu connexe :")
         afficher_matrice_transfert(matrice_transfert)
 

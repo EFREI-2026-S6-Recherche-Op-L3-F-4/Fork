@@ -271,7 +271,7 @@ def verifier_connexite(matrice_transfert):
         print("Non elle ne l'est pas. Voici les sous-graphes connexes composant la proposition:")
         for i, comp in enumerate(composantes):
             print(comp, end=',' if i < len(composantes) - 1 else '\n')
-
+        return composantes
 
 def identifier_composantes(matrice_transfert, visite, n, m):
     def bfs(start):
@@ -331,19 +331,30 @@ def connecter_composantes(matrice_transfert, composantes, n, m, matrice_des_cout
     print("Les composantes ont été connectées pour rendre le graphe connexe.")
     return matrice_transfert
 
-def rendre_connexe(matrice_transfert, matrice_des_couts):
-    n = len(matrice_transfert)
-    m = len(matrice_transfert[0])
-    visite = [False] * (n + m)
+def rendre_connexe(composantes, matrice_transfert, matrice_cout):
+    # Exemple pour composantes: [['S1', 'C1', 'C4', 'S3', 'C2'], ['S2', 'C3']]
+    max_length = max(len(comp) for comp in composantes)  # Find the length of the largest list
+    smaller_lists_indices = [i for i, comp in enumerate(composantes) if len(comp) < max_length]  # Find indices of smaller lists
+    matrice_des_couts = matrice_cout[1:-1]
+    matrice_des_couts = [row[:-1] for row in matrice_des_couts]
 
-    # Identifier les composantes connexes existantes
-    composantes = identifier_composantes(matrice_transfert, visite, n, m)
+    copie = copied_list = [sublist[:] for sublist in matrice_transfert]
 
-    # Si le graphe est déjà connexe, rien à faire
-    if len(composantes) == 1:
-        print("Le graphe est déjà connexe.")
-        return matrice_transfert
+    liste_grande = composantes[0]
+    liste2 = []
+    for i in smaller_lists_indices:
+        liste2.append(composantes[i])
+    for y in liste2:
+        for z in range(len(y)):
+            li = []
+            if y[z][0] == "S":
+                copie.pop(int(y[z][1])-1)
+            if y[z][0] == "C":
+                for i in range(len(copie)):
+                    li.append(int(copie[i][int(y[z][1])-1]))
 
-    # Connecter les composantes
-    nouvelle_matrice = connecter_composantes(matrice_transfert, composantes, n, m, matrice_des_couts)
-    return nouvelle_matrice
+
+    print(matrice_transfert)
+    print(matrice_des_couts)
+    print(copie)
+    return matrice_transfert
