@@ -1,5 +1,3 @@
-Entrez le nom du fichier que vous voulez afficher : 2
-
 Contenu du fichier 2 :
   2   2
  10  20  100
@@ -17,8 +15,8 @@ Provisions : [ 100  100 ]
 Commandes : [ 100  100 ]
 
 -------------------
-Application de la méthode du coin nord-ouest :
-Résultat de la méthode du coin nord-ouest :
+Application de la méthode du coin nord-ouest...
+Résultat de la matrice du coin nord-ouest :
 +----+-----+-----+
 |    |  C1 |  C2 |
 +----+-----+-----+
@@ -28,9 +26,16 @@ Résultat de la méthode du coin nord-ouest :
 Coût total pour la méthode du coin nord-ouest : 2000
 
 -------------------
-Application de la méthode de Balas-Hammer :
-Choix final pour maximiser l'efficacité : Ligne 1, quantité 100 transférée
-Matrice de transfert obtenue :
+Application de la méthode de Balas-Hammer...
+Problème équilibré, nous pouvons appliquer Balas-Hammer :
+
+Pénalité maximale de 20 trouvée en :
+ - Ligne 1
+ - Colonne 0
+Remplir l'arête (1, 1) avec la quantité 100.
+Forçage de remplissage: (0, 0) avec la quantité restante : 100.
+
+Résultat de la matrice de Balas-Hammer/Transfert :
 +----+-----+-----+
 |    |  C1 |  C2 |
 +----+-----+-----+
@@ -44,9 +49,23 @@ Vérification de la présence de cycles dans la matrice de transfert :
 Aucun cycle détecté dans la matrice de transfert.
 
 -------------------
-La matrice de transfert est-elle connexe :
-La matrice de transfert est non connexe. Voici les sous-graphes connexes composant la proposition:
+La matrice de transfert est-elle connexe ? :
+Non elle ne l'est pas. Voici les sous-graphes connexes composant la proposition:
 ['S1', 'C1'],['S2', 'C2']
+
+-------------------
+Rendre la matrice de transfert connexe si elle ne l'est pas :
+Non elle ne l'est pas. Voici les sous-graphes connexes composant la proposition:
+['S1', 'C1'],['S2', 'C2']
+matrice de transfert [[100, 'X'], [0, 100]]
+matrice des couts [[10, 20], [30, 10]]
+La matrice de transfert après avoir rendu connexe :
++----+-----+-----+
+|    |  C1 |  C2 |
++----+-----+-----+
+| S1 | 100 |  X  |
+| S2 |  0  | 100 |
++----+-----+-----+
 
 -------------------
 Fin du programme.

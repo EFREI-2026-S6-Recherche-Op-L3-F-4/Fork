@@ -1,5 +1,3 @@
-Entrez le nom du fichier que vous voulez afficher : 9
-
 Contenu du fichier 9 :
   7   3
  30  20  15 100
@@ -27,8 +25,8 @@ Provisions : [ 100  100  100  100  100  100  100 ]
 Commandes : [ 400  200  100 ]
 
 -------------------
-Application de la méthode du coin nord-ouest :
-Résultat de la méthode du coin nord-ouest :
+Application de la méthode du coin nord-ouest...
+Résultat de la matrice du coin nord-ouest :
 +----+-----+-----+-----+
 |    |  C1 |  C2 |  C3 |
 +----+-----+-----+-----+
@@ -43,14 +41,30 @@ Résultat de la méthode du coin nord-ouest :
 Coût total pour la méthode du coin nord-ouest : 15500
 
 -------------------
-Application de la méthode de Balas-Hammer :
-Choix final pour maximiser l'efficacité : Ligne 4, quantité 100 transférée
-Choix final pour maximiser l'efficacité : Ligne 6, quantité 100 transférée
-Choix final pour maximiser l'efficacité : Ligne 1, quantité 100 transférée
-Choix final pour maximiser l'efficacité : Ligne 5, quantité 100 transférée
-Choix final pour maximiser l'efficacité : Ligne 0, quantité 100 transférée
-Choix final pour maximiser l'efficacité : Colonne 0, quantité 100 transférée
-Matrice de transfert obtenue :
+Application de la méthode de Balas-Hammer...
+Problème équilibré, nous pouvons appliquer Balas-Hammer :
+
+Pénalité maximale de 37 trouvée en :
+ - Ligne 4
+Remplir l'arête (4, 2) avec la quantité 100.
+Pénalité maximale de 46 trouvée en :
+ - Ligne 6
+Remplir l'arête (6, 1) avec la quantité 100.
+Pénalité maximale de 40 trouvée en :
+ - Ligne 1
+Remplir l'arête (1, 0) avec la quantité 100.
+Pénalité maximale de 33 trouvée en :
+ - Ligne 5
+Remplir l'arête (5, 0) avec la quantité 100.
+Pénalité maximale de 10 trouvée en :
+ - Ligne 0
+Remplir l'arête (0, 1) avec la quantité 100.
+Pénalité maximale de 3 trouvée en :
+ - Colonne 0
+Remplir l'arête (3, 0) avec la quantité 100.
+Forçage de remplissage: (2, 0) avec la quantité restante : 100.
+
+Résultat de la matrice de Balas-Hammer/Transfert :
 +----+-----+-----+-----+
 |    |  C1 |  C2 |  C3 |
 +----+-----+-----+-----+
@@ -69,9 +83,28 @@ Vérification de la présence de cycles dans la matrice de transfert :
 Aucun cycle détecté dans la matrice de transfert.
 
 -------------------
-La matrice de transfert est-elle connexe :
-La matrice de transfert est non connexe. Voici les sous-graphes connexes composant la proposition:
+La matrice de transfert est-elle connexe ? :
+Non elle ne l'est pas. Voici les sous-graphes connexes composant la proposition:
 ['S1', 'C2', 'S7'],['S2', 'C1', 'S3', 'S4', 'S6'],['S5', 'C3']
+
+-------------------
+Rendre la matrice de transfert connexe si elle ne l'est pas :
+Non elle ne l'est pas. Voici les sous-graphes connexes composant la proposition:
+['S1', 'C2', 'S7'],['S2', 'C1', 'S3', 'S4', 'S6'],['S5', 'C3']
+matrice de transfert [[0, 100, 0], [100, 0, 0], [100, 0, 'X'], [100, 'X', 0], [0, 0, 100], [100, 0, 0], [0, 100, 0]]
+matrice des couts [[30, 20, 15], [10, 50, 2], [9, 10, 30], [6, 2, 29], [50, 40, 3], [5, 38, 27], [50, 4, 22]]
+La matrice de transfert après avoir rendu connexe :
++----+-----+-----+-----+
+|    |  C1 |  C2 |  C3 |
++----+-----+-----+-----+
+| S1 |  0  | 100 |  0  |
+| S2 | 100 |  0  |  0  |
+| S3 | 100 |  0  |  X  |
+| S4 | 100 |  X  |  0  |
+| S5 |  0  |  0  | 100 |
+| S6 | 100 |  0  |  0  |
+| S7 |  0  | 100 |  0  |
++----+-----+-----+-----+
 
 -------------------
 Fin du programme.

@@ -17,8 +17,8 @@ Provisions : [ 600  500 ]
 Commandes : [ 100 1000 ]
 
 -------------------
-Application de la méthode du coin nord-ouest :
-Résultat de la méthode du coin nord-ouest :
+Application de la méthode du coin nord-ouest...
+Résultat de la matrice du coin nord-ouest :
 +----+-----+-----+
 |    |  C1 |  C2 |
 +----+-----+-----+
@@ -28,10 +28,21 @@ Résultat de la méthode du coin nord-ouest :
 Coût total pour la méthode du coin nord-ouest : 18500
 
 -------------------
-Application de la méthode de Balas-Hammer :
-Choix final pour maximiser l'efficacité : Ligne 0, quantité 600 transférée
-Choix final pour maximiser l'efficacité : Ligne 1, quantité 100 transférée
-Matrice de transfert obtenue :
+Application de la méthode de Balas-Hammer...
+Problème équilibré, nous pouvons appliquer Balas-Hammer :
+
+Pénalité maximale de 29 trouvée en :
+ - Ligne 0
+ - Ligne 1
+ - Colonne 0
+ - Colonne 1
+Remplir l'arête (0, 1) avec la quantité 600.
+Pénalité maximale de 29 trouvée en :
+ - Ligne 1
+Remplir l'arête (1, 0) avec la quantité 100.
+Forçage de remplissage: (1, 1) avec la quantité restante : 400.
+
+Résultat de la matrice de Balas-Hammer/Transfert :
 +----+-----+-----+
 |    |  C1 |  C2 |
 +----+-----+-----+
@@ -45,8 +56,19 @@ Vérification de la présence de cycles dans la matrice de transfert :
 Aucun cycle détecté dans la matrice de transfert.
 
 -------------------
-La matrice de transfert est-elle connexe :
-La matrice de transfert est connexe.
+La matrice de transfert est-elle connexe ? :
+Oui elle l'est
+
+-------------------
+Rendre la matrice de transfert connexe si elle ne l'est pas :
+Oui elle l'est
+La matrice de transfert après avoir rendu connexe :
++----+-----+-----+
+|    |  C1 |  C2 |
++----+-----+-----+
+| S1 |  0  | 600 |
+| S2 | 100 | 400 |
++----+-----+-----+
 
 -------------------
 Fin du programme.

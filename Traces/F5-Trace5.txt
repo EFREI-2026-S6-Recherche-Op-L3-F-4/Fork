@@ -19,8 +19,8 @@ Provisions : [  25   25   25 ]
 Commandes : [  35   20   20 ]
 
 -------------------
-Application de la méthode du coin nord-ouest :
-Résultat de la méthode du coin nord-ouest :
+Application de la méthode du coin nord-ouest...
+Résultat de la matrice du coin nord-ouest :
 +----+----+----+----+
 |    | C1 | C2 | C3 |
 +----+----+----+----+
@@ -31,12 +31,25 @@ Résultat de la méthode du coin nord-ouest :
 Coût total pour la méthode du coin nord-ouest : 480
 
 -------------------
-Application de la méthode de Balas-Hammer :
-Choix final pour maximiser l'efficacité : Ligne 0, quantité 25 transférée
-Choix final pour maximiser l'efficacité : Colonne 2, quantité 20 transférée
-Choix final pour maximiser l'efficacité : Ligne 1, quantité 5 transférée
-Choix final pour maximiser l'efficacité : Ligne 2, quantité 5 transférée
-Matrice de transfert obtenue :
+Application de la méthode de Balas-Hammer...
+Problème équilibré, nous pouvons appliquer Balas-Hammer :
+
+Pénalité maximale de 2 trouvée en :
+ - Ligne 0
+ - Colonne 2
+Remplir l'arête (0, 0) avec la quantité 25.
+Pénalité maximale de 2 trouvée en :
+ - Colonne 2
+Remplir l'arête (1, 2) avec la quantité 20.
+Pénalité maximale de 2 trouvée en :
+ - Ligne 1
+Remplir l'arête (1, 0) avec la quantité 5.
+Pénalité maximale de 1 trouvée en :
+ - Ligne 2
+Remplir l'arête (2, 0) avec la quantité 5.
+Forçage de remplissage: (2, 1) avec la quantité restante : 20.
+
+Résultat de la matrice de Balas-Hammer/Transfert :
 +----+----+----+----+
 |    | C1 | C2 | C3 |
 +----+----+----+----+
@@ -51,8 +64,20 @@ Vérification de la présence de cycles dans la matrice de transfert :
 Aucun cycle détecté dans la matrice de transfert.
 
 -------------------
-La matrice de transfert est-elle connexe :
-La matrice de transfert est connexe.
+La matrice de transfert est-elle connexe ? :
+Oui elle l'est
+
+-------------------
+Rendre la matrice de transfert connexe si elle ne l'est pas :
+Oui elle l'est
+La matrice de transfert après avoir rendu connexe :
++----+----+----+----+
+|    | C1 | C2 | C3 |
++----+----+----+----+
+| S1 | 25 | 0  | 0  |
+| S2 | 5  | 0  | 20 |
+| S3 | 5  | 20 | 0  |
++----+----+----+----+
 
 -------------------
 Fin du programme.

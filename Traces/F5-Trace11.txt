@@ -1,5 +1,3 @@
-Entrez le nom du fichier que vous voulez afficher : 11
-
 Contenu du fichier 11 :
  20  10
   1   2   3   4   5   6   7   8   9  10  10
@@ -53,8 +51,8 @@ Provisions : [  10   20   30   40   50   60   70   80   90  100  110  120  130  
 Commandes : [ 120  140  160  180  200  220  240  260  280  300 ]
 
 -------------------
-Application de la méthode du coin nord-ouest :
-Résultat de la méthode du coin nord-ouest :
+Application de la méthode du coin nord-ouest...
+Résultat de la matrice du coin nord-ouest :
 +-----+----+----+----+-----+-----+-----+-----+-----+-----+-----+
 |     | C1 | C2 | C3 |  C4 |  C5 |  C6 |  C7 |  C8 |  C9 | C10 |
 +-----+----+----+----+-----+-----+-----+-----+-----+-----+-----+
@@ -82,36 +80,234 @@ Résultat de la méthode du coin nord-ouest :
 Coût total pour la méthode du coin nord-ouest : 279170
 
 -------------------
-Application de la méthode de Balas-Hammer :
-Choix final pour maximiser l'efficacité : Colonne 0, quantité 10 transférée
-Choix final pour maximiser l'efficacité : Colonne 0, quantité 20 transférée
-Choix final pour maximiser l'efficacité : Colonne 0, quantité 30 transférée
-Choix final pour maximiser l'efficacité : Colonne 0, quantité 40 transférée
-Choix final pour maximiser l'efficacité : Colonne 1, quantité 50 transférée
-Choix final pour maximiser l'efficacité : Colonne 0, quantité 20 transférée
-Choix final pour maximiser l'efficacité : Colonne 1, quantité 40 transférée
-Choix final pour maximiser l'efficacité : Colonne 1, quantité 50 transférée
-Choix final pour maximiser l'efficacité : Colonne 2, quantité 20 transférée
-Choix final pour maximiser l'efficacité : Colonne 2, quantité 80 transférée
-Choix final pour maximiser l'efficacité : Colonne 2, quantité 60 transférée
-Choix final pour maximiser l'efficacité : Colonne 3, quantité 30 transférée
-Choix final pour maximiser l'efficacité : Colonne 3, quantité 100 transférée
-Choix final pour maximiser l'efficacité : Colonne 3, quantité 50 transférée
-Choix final pour maximiser l'efficacité : Colonne 4, quantité 60 transférée
-Choix final pour maximiser l'efficacité : Colonne 4, quantité 120 transférée
-Choix final pour maximiser l'efficacité : Colonne 4, quantité 20 transférée
-Choix final pour maximiser l'efficacité : Colonne 5, quantité 110 transférée
-Choix final pour maximiser l'efficacité : Colonne 5, quantité 110 transférée
-Choix final pour maximiser l'efficacité : Colonne 6, quantité 30 transférée
-Choix final pour maximiser l'efficacité : Colonne 6, quantité 150 transférée
-Choix final pour maximiser l'efficacité : Colonne 6, quantité 60 transférée
-Choix final pour maximiser l'efficacité : Colonne 7, quantité 100 transférée
-Choix final pour maximiser l'efficacité : Colonne 7, quantité 160 transférée
-Choix final pour maximiser l'efficacité : Colonne 8, quantité 10 transférée
-Choix final pour maximiser l'efficacité : Colonne 8, quantité 180 transférée
-Choix final pour maximiser l'efficacité : Colonne 8, quantité 90 transférée
-Choix final pour maximiser l'efficacité : Colonne 9, quantité 100 transférée
-Matrice de transfert obtenue :
+Application de la méthode de Balas-Hammer...
+Problème équilibré, nous pouvons appliquer Balas-Hammer :
+
+Pénalité maximale de 10 trouvée en :
+ - Colonne 0
+ - Colonne 1
+ - Colonne 2
+ - Colonne 3
+ - Colonne 4
+ - Colonne 5
+ - Colonne 6
+ - Colonne 7
+ - Colonne 8
+ - Colonne 9
+Remplir l'arête (0, 0) avec la quantité 10.
+Pénalité maximale de 10 trouvée en :
+ - Colonne 0
+ - Colonne 1
+ - Colonne 2
+ - Colonne 3
+ - Colonne 4
+ - Colonne 5
+ - Colonne 6
+ - Colonne 7
+ - Colonne 8
+ - Colonne 9
+Remplir l'arête (1, 0) avec la quantité 20.
+Pénalité maximale de 10 trouvée en :
+ - Colonne 0
+ - Colonne 1
+ - Colonne 2
+ - Colonne 3
+ - Colonne 4
+ - Colonne 5
+ - Colonne 6
+ - Colonne 7
+ - Colonne 8
+ - Colonne 9
+Remplir l'arête (2, 0) avec la quantité 30.
+Pénalité maximale de 10 trouvée en :
+ - Colonne 0
+ - Colonne 2
+ - Colonne 3
+ - Colonne 4
+ - Colonne 5
+ - Colonne 6
+ - Colonne 7
+ - Colonne 8
+ - Colonne 9
+Remplir l'arête (3, 0) avec la quantité 40.
+Pénalité maximale de 11 trouvée en :
+ - Colonne 1
+Remplir l'arête (4, 1) avec la quantité 50.
+Pénalité maximale de 10 trouvée en :
+ - Colonne 0
+ - Colonne 1
+ - Colonne 2
+ - Colonne 3
+ - Colonne 4
+ - Colonne 5
+ - Colonne 6
+ - Colonne 7
+ - Colonne 8
+ - Colonne 9
+Remplir l'arête (5, 0) avec la quantité 20.
+Pénalité maximale de 10 trouvée en :
+ - Colonne 1
+ - Colonne 2
+ - Colonne 3
+ - Colonne 4
+ - Colonne 5
+ - Colonne 6
+ - Colonne 7
+ - Colonne 8
+ - Colonne 9
+Remplir l'arête (5, 1) avec la quantité 40.
+Pénalité maximale de 10 trouvée en :
+ - Colonne 1
+ - Colonne 2
+ - Colonne 3
+ - Colonne 4
+ - Colonne 5
+ - Colonne 6
+ - Colonne 7
+ - Colonne 8
+ - Colonne 9
+Remplir l'arête (6, 1) avec la quantité 50.
+Pénalité maximale de 10 trouvée en :
+ - Colonne 2
+ - Colonne 3
+ - Colonne 4
+ - Colonne 5
+ - Colonne 6
+ - Colonne 7
+ - Colonne 8
+ - Colonne 9
+Remplir l'arête (6, 2) avec la quantité 20.
+Pénalité maximale de 10 trouvée en :
+ - Colonne 2
+ - Colonne 3
+ - Colonne 4
+ - Colonne 5
+ - Colonne 6
+ - Colonne 7
+ - Colonne 8
+ - Colonne 9
+Remplir l'arête (7, 2) avec la quantité 80.
+Pénalité maximale de 10 trouvée en :
+ - Colonne 2
+ - Colonne 3
+ - Colonne 4
+ - Colonne 5
+ - Colonne 6
+ - Colonne 7
+ - Colonne 8
+ - Colonne 9
+Remplir l'arête (8, 2) avec la quantité 60.
+Pénalité maximale de 10 trouvée en :
+ - Colonne 3
+ - Colonne 4
+ - Colonne 5
+ - Colonne 6
+ - Colonne 7
+ - Colonne 8
+ - Colonne 9
+Remplir l'arête (8, 3) avec la quantité 30.
+Pénalité maximale de 10 trouvée en :
+ - Colonne 3
+ - Colonne 4
+ - Colonne 5
+ - Colonne 6
+ - Colonne 7
+ - Colonne 8
+ - Colonne 9
+Remplir l'arête (9, 3) avec la quantité 100.
+Pénalité maximale de 10 trouvée en :
+ - Colonne 3
+ - Colonne 4
+ - Colonne 5
+ - Colonne 6
+ - Colonne 7
+ - Colonne 8
+ - Colonne 9
+Remplir l'arête (10, 3) avec la quantité 50.
+Pénalité maximale de 10 trouvée en :
+ - Colonne 4
+ - Colonne 5
+ - Colonne 6
+ - Colonne 7
+ - Colonne 8
+ - Colonne 9
+Remplir l'arête (10, 4) avec la quantité 60.
+Pénalité maximale de 10 trouvée en :
+ - Colonne 4
+ - Colonne 5
+ - Colonne 6
+ - Colonne 7
+ - Colonne 8
+ - Colonne 9
+Remplir l'arête (11, 4) avec la quantité 120.
+Pénalité maximale de 10 trouvée en :
+ - Colonne 4
+ - Colonne 5
+ - Colonne 6
+ - Colonne 7
+ - Colonne 8
+ - Colonne 9
+Remplir l'arête (12, 4) avec la quantité 20.
+Pénalité maximale de 10 trouvée en :
+ - Colonne 5
+ - Colonne 6
+ - Colonne 7
+ - Colonne 8
+ - Colonne 9
+Remplir l'arête (12, 5) avec la quantité 110.
+Pénalité maximale de 10 trouvée en :
+ - Colonne 5
+ - Colonne 6
+ - Colonne 7
+ - Colonne 8
+ - Colonne 9
+Remplir l'arête (13, 5) avec la quantité 110.
+Pénalité maximale de 10 trouvée en :
+ - Colonne 6
+ - Colonne 7
+ - Colonne 8
+ - Colonne 9
+Remplir l'arête (13, 6) avec la quantité 30.
+Pénalité maximale de 10 trouvée en :
+ - Colonne 6
+ - Colonne 7
+ - Colonne 8
+ - Colonne 9
+Remplir l'arête (14, 6) avec la quantité 150.
+Pénalité maximale de 10 trouvée en :
+ - Colonne 6
+ - Colonne 7
+ - Colonne 8
+ - Colonne 9
+Remplir l'arête (15, 6) avec la quantité 60.
+Pénalité maximale de 10 trouvée en :
+ - Colonne 7
+ - Colonne 8
+ - Colonne 9
+Remplir l'arête (15, 7) avec la quantité 100.
+Pénalité maximale de 10 trouvée en :
+ - Colonne 7
+ - Colonne 8
+ - Colonne 9
+Remplir l'arête (16, 7) avec la quantité 160.
+Pénalité maximale de 10 trouvée en :
+ - Colonne 8
+ - Colonne 9
+Remplir l'arête (16, 8) avec la quantité 10.
+Pénalité maximale de 10 trouvée en :
+ - Colonne 8
+ - Colonne 9
+Remplir l'arête (17, 8) avec la quantité 180.
+Pénalité maximale de 10 trouvée en :
+ - Colonne 8
+ - Colonne 9
+Remplir l'arête (18, 8) avec la quantité 90.
+Pénalité maximale de 10 trouvée en :
+ - Colonne 9
+Remplir l'arête (18, 9) avec la quantité 100.
+Forçage de remplissage: (19, 9) avec la quantité restante : 200.
+
+Résultat de la matrice de Balas-Hammer/Transfert :
 +-----+----+----+----+-----+-----+-----+-----+-----+-----+-----+
 |     | C1 | C2 | C3 |  C4 |  C5 |  C6 |  C7 |  C8 |  C9 | C10 |
 +-----+----+----+----+-----+-----+-----+-----+-----+-----+-----+
@@ -143,8 +339,37 @@ Vérification de la présence de cycles dans la matrice de transfert :
 Aucun cycle détecté dans la matrice de transfert.
 
 -------------------
-La matrice de transfert est-elle connexe :
-La matrice de transfert est connexe.
+La matrice de transfert est-elle connexe ? :
+Oui elle l'est
+
+-------------------
+Rendre la matrice de transfert connexe si elle ne l'est pas :
+Oui elle l'est
+La matrice de transfert après avoir rendu connexe :
++-----+----+----+----+-----+-----+-----+-----+-----+-----+-----+
+|     | C1 | C2 | C3 |  C4 |  C5 |  C6 |  C7 |  C8 |  C9 | C10 |
++-----+----+----+----+-----+-----+-----+-----+-----+-----+-----+
+|  S1 | 10 | 0  | 0  |  0  |  0  |  0  |  0  |  0  |  0  |  0  |
+|  S2 | 20 | 0  | 0  |  0  |  0  |  0  |  0  |  0  |  0  |  0  |
+|  S3 | 30 | 0  | 0  |  0  |  0  |  0  |  0  |  0  |  0  |  0  |
+|  S4 | 40 | 0  | 0  |  0  |  0  |  0  |  0  |  0  |  0  |  0  |
+|  S5 | 0  | 50 | 0  |  0  |  0  |  0  |  0  |  0  |  0  |  0  |
+|  S6 | 20 | 40 | 0  |  0  |  0  |  0  |  0  |  0  |  0  |  0  |
+|  S7 | 0  | 50 | 20 |  0  |  0  |  0  |  0  |  0  |  0  |  0  |
+|  S8 | 0  | 0  | 80 |  0  |  0  |  0  |  0  |  0  |  0  |  0  |
+|  S9 | 0  | 0  | 60 |  30 |  0  |  0  |  0  |  0  |  0  |  0  |
+| S10 | 0  | 0  | 0  | 100 |  0  |  0  |  0  |  0  |  0  |  0  |
+| S11 | 0  | 0  | 0  |  50 |  60 |  0  |  0  |  0  |  0  |  0  |
+| S12 | 0  | 0  | 0  |  0  | 120 |  0  |  0  |  0  |  0  |  0  |
+| S13 | 0  | 0  | 0  |  0  |  20 | 110 |  0  |  0  |  0  |  0  |
+| S14 | 0  | 0  | 0  |  0  |  0  | 110 |  30 |  0  |  0  |  0  |
+| S15 | 0  | 0  | 0  |  0  |  0  |  0  | 150 |  0  |  0  |  0  |
+| S16 | 0  | 0  | 0  |  0  |  0  |  0  |  60 | 100 |  0  |  0  |
+| S17 | 0  | 0  | 0  |  0  |  0  |  0  |  0  | 160 |  10 |  0  |
+| S18 | 0  | 0  | 0  |  0  |  0  |  0  |  0  |  0  | 180 |  0  |
+| S19 | 0  | 0  | 0  |  0  |  0  |  0  |  0  |  0  |  90 | 100 |
+| S20 | 0  | 0  | 0  |  0  |  0  |  0  |  0  |  0  |  0  | 200 |
++-----+----+----+----+-----+-----+-----+-----+-----+-----+-----+
 
 -------------------
 Fin du programme.

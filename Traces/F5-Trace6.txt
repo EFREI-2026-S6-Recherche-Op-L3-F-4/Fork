@@ -1,5 +1,3 @@
-Entrez le nom du fichier que vous voulez afficher : 6
-
 Contenu du fichier 6 :
  3  4
 11 12 10 10 60
@@ -19,8 +17,8 @@ Provisions : [  60   30   90 ]
 Commandes : [  50   75   30   25 ]
 
 -------------------
-Application de la méthode du coin nord-ouest :
-Résultat de la méthode du coin nord-ouest :
+Application de la méthode du coin nord-ouest...
+Résultat de la matrice du coin nord-ouest :
 +----+----+----+----+----+
 |    | C1 | C2 | C3 | C4 |
 +----+----+----+----+----+
@@ -31,12 +29,25 @@ Résultat de la méthode du coin nord-ouest :
 Coût total pour la méthode du coin nord-ouest : 3035
 
 -------------------
-Application de la méthode de Balas-Hammer :
-Choix final pour maximiser l'efficacité : Colonne 3, quantité 25 transférée
-Choix final pour maximiser l'efficacité : Colonne 0, quantité 35 transférée
-Choix final pour maximiser l'efficacité : Colonne 2, quantité 30 transférée
-Choix final pour maximiser l'efficacité : Ligne 2, quantité 15 transférée
-Matrice de transfert obtenue :
+Application de la méthode de Balas-Hammer...
+Problème équilibré, nous pouvons appliquer Balas-Hammer :
+
+Pénalité maximale de 8 trouvée en :
+ - Colonne 3
+Remplir l'arête (0, 3) avec la quantité 25.
+Pénalité maximale de 6 trouvée en :
+ - Colonne 0
+Remplir l'arête (0, 0) avec la quantité 35.
+Pénalité maximale de 5 trouvée en :
+ - Colonne 2
+ - Colonne 1
+Remplir l'arête (1, 2) avec la quantité 30.
+Pénalité maximale de 2 trouvée en :
+ - Ligne 2
+Remplir l'arête (2, 0) avec la quantité 15.
+Forçage de remplissage: (2, 1) avec la quantité restante : 75.
+
+Résultat de la matrice de Balas-Hammer/Transfert :
 +----+----+----+----+----+
 |    | C1 | C2 | C3 | C4 |
 +----+----+----+----+----+
@@ -51,9 +62,24 @@ Vérification de la présence de cycles dans la matrice de transfert :
 Aucun cycle détecté dans la matrice de transfert.
 
 -------------------
-La matrice de transfert est-elle connexe :
-La matrice de transfert est non connexe. Voici les sous-graphes connexes composant la proposition:
+La matrice de transfert est-elle connexe ? :
+Non elle ne l'est pas. Voici les sous-graphes connexes composant la proposition:
 ['S1', 'C1', 'C4', 'S3', 'C2'],['S2', 'C3']
+
+-------------------
+Rendre la matrice de transfert connexe si elle ne l'est pas :
+Non elle ne l'est pas. Voici les sous-graphes connexes composant la proposition:
+['S1', 'C1', 'C4', 'S3', 'C2'],['S2', 'C3']
+matrice de transfert [[35, 0, 'X', 25], [0, 0, 30, 0], [15, 75, 0, 0]]
+matrice des couts [[11, 12, 10, 10], [17, 16, 15, 18], [19, 21, 20, 22]]
+La matrice de transfert après avoir rendu connexe :
++----+----+----+----+----+
+|    | C1 | C2 | C3 | C4 |
++----+----+----+----+----+
+| S1 | 35 | 0  | X  | 25 |
+| S2 | 0  | 0  | 30 | 0  |
+| S3 | 15 | 75 | 0  | 0  |
++----+----+----+----+----+
 
 -------------------
 Fin du programme.
